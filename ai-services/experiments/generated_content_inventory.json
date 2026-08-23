@@ -1,0 +1,33 @@
+{
+    "Node": [
+        "node_modules/",
+        "dist/",
+        "build/",
+        "coverage/"
+    ],
+    "Python": [
+        "__pycache__/",
+        ".pytest_cache/",
+        ".mypy_cache/",
+        ".ruff_cache/",
+        ".coverage"
+    ],
+    "Virtual_Environments": [
+        ".venv/",
+        "venv/",
+        "env/"
+    ],
+    "IDE": [
+        ".vscode/",
+        ".idea/"
+    ],
+    "Logs": [
+        "*.log"
+    ],
+    "Temporary": [
+        "tmp/",
+        "temp/",
+        "scratch_outputs/",
+        "editor_backups/"
+    ]
+}

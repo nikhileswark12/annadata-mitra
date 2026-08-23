@@ -1,0 +1,25 @@
+{
+    "Comparisons": [
+        {
+            "task": "Crop Recommendation",
+            "methodology": "Random Forest",
+            "reported_metric": "99.09% Accuracy",
+            "literature_context": "Typical crop recommendation models on similar tabular environmental datasets report 90-97% accuracy using ensemble methods.",
+            "direct_superiority_claimed": false
+        },
+        {
+            "task": "Plant Disease Detection",
+            "methodology": "MobileNetV2 Transfer Learning",
+            "reported_metric": "88.71% Accuracy, 97.08% Top-3",
+            "literature_context": "State-of-the-art models on PlantVillage variations typically achieve 85-98% depending on test set difficulty and background augmentation.",
+            "direct_superiority_claimed": false
+        },
+        {
+            "task": "Multi-Agent Orchestration",
+            "methodology": "Rule-based Synthesizer",
+            "reported_metric": "100% Conflict Resolution",
+            "literature_context": "Most agricultural DSS rely on monolithic architectures or independent dashboards. Multi-agent systems in agriculture are rare, often struggling with contradictory advice.",
+            "direct_superiority_claimed": false
+        }
+    ]
+}

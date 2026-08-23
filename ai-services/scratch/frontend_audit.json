@@ -1,0 +1,15 @@
+{
+  "Pages": {
+    "Dashboard": "VERIFIED",
+    "Crop Planning": "VERIFIED",
+    "Weather": "VERIFIED",
+    "Market": "VERIFIED",
+    "Vision": "VERIFIED",
+    "Strategist": "VERIFIED",
+    "Login": "VERIFIED",
+    "Register": "VERIFIED"
+  },
+  "ProtectedRoute": "NOT VERIFIED",
+  "API_Integration": "VERIFIED",
+  "Routing": "VERIFIED"
+}

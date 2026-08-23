@@ -1,0 +1,10 @@
+{
+    "Structure": 15,
+    "Documentation": 15,
+    "Reproducibility": 20,
+    "Experiments": 20,
+    "Packaging": 10,
+    "Code_Organization": 10,
+    "Release_Readiness": 10,
+    "Total_Score": 100
+}

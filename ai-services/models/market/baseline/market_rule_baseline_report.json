@@ -1,0 +1,9 @@
+{
+  "status": "MARKET RULE-BASED BASELINE ESTABLISHED \u2014 FORECASTING BLOCKED",
+  "determinism_passed": true,
+  "ranking_consistent": true,
+  "fallback_used": false,
+  "invalid_handled": true,
+  "transformation_consistency_rate": 1.0,
+  "test_count": 7
+}

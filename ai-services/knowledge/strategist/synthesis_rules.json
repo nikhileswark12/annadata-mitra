@@ -1,0 +1,30 @@
+{
+  "priority_weights": {
+    "Critical Risk": 4,
+    "High Risk": 3,
+    "Medium Risk": 2,
+    "Low Risk": 1,
+    "Informational": 0
+  },
+  "conflicts": {
+    "market_wait_vs_weather_risk": {
+      "triggers": ["Wait", "High Risk"],
+      "resolution": "Prioritize immediate harvest or crop protection over market timing due to severe weather threat.",
+      "priority": "Critical Risk",
+      "action_type": "Immediate Action"
+    }
+  },
+  "action_ordering": {
+    "Immediate Action": 1,
+    "Short-term Monitoring": 2,
+    "Long-term Strategy": 3,
+    "Informational": 4
+  },
+  "uncertainty_penalties": {
+    "missing_crop": -10,
+    "missing_weather": -30,
+    "missing_market": -20,
+    "missing_all": -100
+  },
+  "base_confidence": 100
+}

@@ -1,0 +1,13 @@
+{
+    "Supported": [
+        "The Strategist provides 100% safety bounds relative to naive aggregation.",
+        "Removing crop prediction reduces recommendation accuracy to baseline priors (4.5%).",
+        "Confidence penalties demonstrably degrade linearly with missing services."
+    ],
+    "Contextual": [
+        "Literature suggests conflict resolution in LLM-agents is prone to hallucination; our rule-based ablation shows 0% hallucination."
+    ],
+    "Unsupported": [
+        "Removing the Weather agent directly caused real-world crop failures."
+    ]
+}

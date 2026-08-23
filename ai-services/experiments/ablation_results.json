@@ -1,0 +1,28 @@
+{
+    "Crop_Ablation": {
+        "fallback_quality": "Heuristic Guesses",
+        "confidence": 0.6499999999999999,
+        "accuracy": 0.045
+    },
+    "Weather_Ablation": {
+        "conflict_handling": "Failed (Safety 0.7)",
+        "confidence": 0.6499999999999999
+    },
+    "Market_Ablation": {
+        "advisory_completeness": 0.66,
+        "confidence": 0.6499999999999999
+    },
+    "Vision_Ablation": {
+        "accuracy": 0.02
+    },
+    "Strategist_Ablation": {
+        "conflict_safety": 0.0,
+        "deduplication": "Failed"
+    },
+    "Confidence_Ablation": {
+        "degraded_state_behavior": "Static Overconfidence"
+    },
+    "Explainability_Ablation": {
+        "evidence_traceability": "Failed"
+    }
+}

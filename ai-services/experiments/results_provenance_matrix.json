@@ -1,0 +1,50 @@
+{
+    "Crop_Accuracy": {
+        "Metric": "Accuracy",
+        "Experiment": "Crop",
+        "Source": "crop_baseline_metrics.json",
+        "Verified": true
+    },
+    "Crop_Macro_F1": {
+        "Metric": "Macro_F1",
+        "Experiment": "Crop",
+        "Source": "crop_baseline_metrics.json",
+        "Verified": true
+    },
+    "Vision_Accuracy": {
+        "Metric": "Accuracy",
+        "Experiment": "Vision",
+        "Source": "vision_e5_audit.json",
+        "Verified": true
+    },
+    "Vision_Top3_Accuracy": {
+        "Metric": "Top3_Accuracy",
+        "Experiment": "Vision",
+        "Source": "vision_e5_audit.json",
+        "Verified": true
+    },
+    "Weather_Rule_coverage": {
+        "Metric": "Rule_coverage",
+        "Experiment": "Weather",
+        "Source": "Rule-based Architecture",
+        "Verified": true
+    },
+    "Market_Rule_consistency": {
+        "Metric": "Rule_consistency",
+        "Experiment": "Market",
+        "Source": "Rule-based Architecture",
+        "Verified": true
+    },
+    "Strategist_Conflict_resolution": {
+        "Metric": "Conflict_resolution",
+        "Experiment": "Strategist",
+        "Source": "strategist_e4_robustness.json",
+        "Verified": true
+    },
+    "Strategist_Latency": {
+        "Metric": "Latency",
+        "Experiment": "Strategist",
+        "Source": "strategist_e3_latency.json",
+        "Verified": true
+    }
+}

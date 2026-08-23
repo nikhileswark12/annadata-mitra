@@ -1,0 +1,31 @@
+{
+    "Table_1_Crop_Metrics": {
+        "Section": "Results_Crop",
+        "Source": "master_results_table.csv"
+    },
+    "Table_2_Vision_Metrics": {
+        "Section": "Results_Vision",
+        "Source": "master_results_table.csv"
+    },
+    "Table_3_Strategist_Metrics": {
+        "Section": "Results_Strategist",
+        "Source": "master_results_table.csv"
+    },
+    "Table_4_Latency": {
+        "Section": "Results_Strategist",
+        "Source": "statistical_appendix.json"
+    },
+    "Table_5_Ablation": {
+        "Section": "Results_Ablation",
+        "Source": "component_contributions.json"
+    },
+    "Table_6_Comparative_Study": {
+        "Section": "Discussion",
+        "Source": "comparative_baseline_tables.json"
+    },
+    "Table_7_Master_Results": {
+        "Section": "Appendix_A",
+        "Source": "master_results_table.csv"
+    },
+    "Validation": "All tabular claims mapped to provenance index."
+}

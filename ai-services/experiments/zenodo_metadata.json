@@ -1,0 +1,24 @@
+{
+    "metadata": {
+        "title": "Annadata Mitra: A Multi-Agent Agricultural Decision Support System",
+        "upload_type": "software",
+        "description": "Annadata Mitra is a multi-agent architectural framework designed for agricultural decision support, featuring deterministic orchestration across ML prediction models (Crop, Vision) and rule-based heuristic agents (Market, Weather).",
+        "creators": [
+            {
+                "name": "Annadata Mitra Team"
+            }
+        ],
+        "version": "1.0.0",
+        "license": "mit",
+        "keywords": [
+            "agriculture",
+            "machine-learning",
+            "multi-agent"
+        ],
+        "communities": [
+            {
+                "identifier": "agriculture-ai"
+            }
+        ]
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "reviewer_reproducibility_bundle": "Included",
+    "experiment_inventory": "Included (artifact_manifest.json)",
+    "metric_provenance": "Included (metric_provenance_master.json)",
+    "environment_manifest": "Included",
+    "artifact_hashes": "Included",
+    "methodology_appendix": "Included",
+    "Status": "COMPLETE"
+}

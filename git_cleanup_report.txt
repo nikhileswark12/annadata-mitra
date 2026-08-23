@@ -1,0 +1,21 @@
+Dataset Audit
+-------------
+Dataset files discovered: 15200
+Dataset directories discovered: 5
+Dataset files currently staged: 15200
+Dataset files removed from staging/tracking: 15200
+Previously tracked dataset files: 15200
+Dataset directories removed from Git tracking: 1 (ai-services/datasets/)
+Dataset files preserved locally: Yes (ai-services/datasets/vision/Plant Disease Data/Apple__rust/1798ac41-0f49-4007-9df5-7e41e3077e51___FREC_C.Rust 3656.JPG exists)
+New .gitignore rules: Added specific dataset directories and extensions.
+Remaining dataset files in Git index: 0
+
+[x] No dataset files remain in the pending commit
+[x] No dataset files were deleted locally
+[x] All discovered dataset directories are ignored
+[x] Dataset archives are ignored
+[x] Source code remains tracked
+[x] Dataset-processing scripts remain tracked
+[x] .gitignore remains tracked
+[x] No commit was created
+[x] No push was performed

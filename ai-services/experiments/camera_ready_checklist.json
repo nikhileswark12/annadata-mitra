@@ -1,0 +1,19 @@
+{
+    "formatting": {
+        "figure_resolution": "300 DPI verified.",
+        "table_formatting": "IEEE/Springer double-column compliant.",
+        "reference_consistency": "BibTeX verified.",
+        "acronym_consistency": "Verified (e.g., LLM, NPK, CNN).",
+        "equation_numbering": "Sequential verified.",
+        "citation_formatting": "Sequential IEEE format [1], [2] verified.",
+        "page_limits": "Compliant."
+    },
+    "reproducibility_appendix": {
+        "environment": "Present (environment_manifest.json)",
+        "seed": "Present (Fixed 42)",
+        "dataset_hashes": "Present (artifact_hashes.json)",
+        "model_hashes": "Present (artifact_hashes.json)",
+        "experiment_inventory": "Present (artifact_manifest.json)",
+        "repository_freeze_statement": "Included in Appendix B."
+    }
+}

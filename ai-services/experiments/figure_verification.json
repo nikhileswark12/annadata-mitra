@@ -1,0 +1,92 @@
+{
+    "figure_01_crop_performance": {
+        "png": true,
+        "svg": true,
+        "caption": true,
+        "status": "VERIFIED"
+    },
+    "figure_02_feature_importance": {
+        "png": true,
+        "svg": true,
+        "caption": true,
+        "status": "VERIFIED"
+    },
+    "figure_03_crop_confusion": {
+        "png": true,
+        "svg": true,
+        "caption": true,
+        "status": "VERIFIED"
+    },
+    "figure_04_vision_comparison": {
+        "png": true,
+        "svg": true,
+        "caption": true,
+        "status": "VERIFIED"
+    },
+    "figure_05_training_history": {
+        "png": true,
+        "svg": true,
+        "caption": true,
+        "status": "VERIFIED"
+    },
+    "figure_06_vision_confusion": {
+        "png": true,
+        "svg": true,
+        "caption": true,
+        "status": "VERIFIED"
+    },
+    "figure_07_conflict_resolution": {
+        "png": true,
+        "svg": true,
+        "caption": true,
+        "status": "VERIFIED"
+    },
+    "figure_08_confidence_curve": {
+        "png": true,
+        "svg": true,
+        "caption": true,
+        "status": "VERIFIED"
+    },
+    "figure_09_explainability": {
+        "png": true,
+        "svg": true,
+        "caption": true,
+        "status": "VERIFIED"
+    },
+    "figure_10_agent_latency": {
+        "png": true,
+        "svg": true,
+        "caption": true,
+        "status": "VERIFIED"
+    },
+    "figure_11_system_latency": {
+        "png": true,
+        "svg": true,
+        "caption": true,
+        "status": "VERIFIED"
+    },
+    "figure_12_component_contribution": {
+        "png": true,
+        "svg": true,
+        "caption": true,
+        "status": "VERIFIED"
+    },
+    "figure_13_ablation_waterfall": {
+        "png": true,
+        "svg": true,
+        "caption": true,
+        "status": "VERIFIED"
+    },
+    "figure_14_system_architecture": {
+        "png": true,
+        "svg": true,
+        "caption": true,
+        "status": "VERIFIED"
+    },
+    "figure_15_multi_agent_workflow": {
+        "png": true,
+        "svg": true,
+        "caption": true,
+        "status": "VERIFIED"
+    }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "transform_wheat",
+    "input": {
+      "crop": "wheat",
+      "location": "Kurnool"
+    },
+    "expected_markup": 1.035
+  },
+  {
+    "id": "transform_paddy(dhan)(common)",
+    "input": {
+      "crop": "paddy(dhan)(common)",
+      "location": "Kurnool"
+    },
+    "expected_markup": 1.035
+  },
+  {
+    "id": "transform_cotton",
+    "input": {
+      "crop": "cotton",
+      "location": "Kurnool"
+    },
+    "expected_markup": 1.035
+  }
+]

@@ -1,0 +1,12 @@
+{
+    "README.md": true,
+    "LICENSE": false,
+    "CITATION.cff": true,
+    "RELEASE_NOTES.md": true,
+    "Environment_manifest": true,
+    "Reproducibility_bundle": true,
+    "Experiment_reports": true,
+    "Figures": true,
+    "Master_tables": true,
+    "Status": "PARTIAL"
+}

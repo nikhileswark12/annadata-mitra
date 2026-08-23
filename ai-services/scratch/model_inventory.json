@@ -1,0 +1,388 @@
+{
+  "Models": [
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/.gitkeep",
+      "size": 0,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/class_names.json",
+      "size": 205,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/crop_model.pkl",
+      "size": 42533705,
+      "framework": "sklearn",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/crop_scaler.pkl",
+      "size": 1135,
+      "framework": "sklearn",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision_model.h5",
+      "size": 10723080,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/crop/baseline/classification_report.json",
+      "size": 3302,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/crop/baseline/class_names.json",
+      "size": 358,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/crop/baseline/confusion_matrix.csv",
+      "size": 1370,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/crop/baseline/crop_model_baseline.pkl",
+      "size": 3576137,
+      "framework": "sklearn",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/crop/baseline/crop_scaler_baseline.pkl",
+      "size": 1135,
+      "framework": "sklearn",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/crop/baseline/evaluation_metrics.json",
+      "size": 423,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/crop/baseline/model_metadata.json",
+      "size": 365,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/crop/baseline/analysis/baseline_analysis.json",
+      "size": 151,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/crop/baseline/analysis/confidence_analysis.json",
+      "size": 240,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/crop/baseline/analysis/confusion_matrix.csv",
+      "size": 1370,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/crop/baseline/analysis/error_analysis.csv",
+      "size": 77,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/crop/baseline/analysis/feature_importance.csv",
+      "size": 205,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/market/baseline/market_rule_baseline_report.json",
+      "size": 265,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/market/baseline/market_rule_results.csv",
+      "size": 174,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/market/baseline/market_rule_test_cases.json",
+      "size": 477,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/market/baseline/README.md",
+      "size": 199,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/classification_report.json",
+      "size": 6598,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/class_names.json",
+      "size": 1096,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/confusion_matrix.csv",
+      "size": 5149,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/evaluation_metrics.json",
+      "size": 7637,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/model_metadata.json",
+      "size": 466,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/training_config.json",
+      "size": 1377,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/training_history.json",
+      "size": 6415,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/vision_model.keras",
+      "size": 4903620,
+      "framework": "keras",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/baseline_analysis/confidence_analysis.json",
+      "size": 298,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/baseline_analysis/confusion_analysis.csv",
+      "size": 5149,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/baseline_analysis/per_class_analysis.csv",
+      "size": 2062,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/baseline_analysis/prediction_distribution.csv",
+      "size": 1351,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/checkpoints/best_model.keras",
+      "size": 4903620,
+      "framework": "keras",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/improved/classification_report.json",
+      "size": 7658,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/improved/class_names.json",
+      "size": 883,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/improved/class_weights.json",
+      "size": 1920,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/improved/confusion_matrix.csv",
+      "size": 5138,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/improved/evaluation_metrics.json",
+      "size": 122,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/improved/model_metadata.json",
+      "size": 74,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/improved/per_class_metrics.csv",
+      "size": 3158,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/improved/prediction_distribution.csv",
+      "size": 1087,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/improved/training_history.json",
+      "size": 2308,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/improved/vision_model_improved.keras",
+      "size": 10230413,
+      "framework": "keras",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/logs/train/events.out.tfevents.1786158708.LAPTOP-OF-NIKHI.18816.0.v2",
+      "size": 278746,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/logs/train/events.out.tfevents.1786160860.LAPTOP-OF-NIKHI.16172.0.v2",
+      "size": 278746,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/logs/train/events.out.tfevents.1786162165.LAPTOP-OF-NIKHI.19376.0.v2",
+      "size": 278746,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/logs/train/events.out.tfevents.1786165194.LAPTOP-OF-NIKHI.13736.0.v2",
+      "size": 278746,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/logs/train/events.out.tfevents.1786212406.LAPTOP-OF-NIKHI.792.0.v2",
+      "size": 931246,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/logs/validation/events.out.tfevents.1786213720.LAPTOP-OF-NIKHI.792.1.v2",
+      "size": 15030,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/smoke_test/class_names.json",
+      "size": 1096,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/smoke_test/confusion_matrix.csv",
+      "size": 5087,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/smoke_test/evaluation_metrics.json",
+      "size": 7073,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/smoke_test/model_metadata.json",
+      "size": 435,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/smoke_test/training_history.json",
+      "size": 297,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/smoke_test/vision_model.keras",
+      "size": 4903619,
+      "framework": "keras",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/vision/smoke_test/vision_model_smoke_test.keras",
+      "size": 4903619,
+      "framework": "keras",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/weather/baseline/README.md",
+      "size": 109,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/weather/baseline/weather_api_latency.json",
+      "size": 61,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/weather/baseline/weather_rule_baseline_report.json",
+      "size": 213,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/weather/baseline/weather_rule_coverage.json",
+      "size": 58,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/weather/baseline/weather_rule_results.csv",
+      "size": 1712,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/models/weather/baseline/weather_rule_test_cases.json",
+      "size": 6995,
+      "framework": "unknown",
+      "status": "VERIFIED"
+    },
+    {
+      "path": "f:/Annadata Mitra/annadata-mitra/ai-services/scratch/vision_model_patched.keras",
+      "size": 4903612,
+      "framework": "keras",
+      "status": "VERIFIED"
+    }
+  ]
+}

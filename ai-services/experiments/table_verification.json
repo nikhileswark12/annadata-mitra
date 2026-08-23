@@ -1,0 +1,10 @@
+{
+    "master_results": {
+        "format": "CSV",
+        "verified": true
+    },
+    "comparative_baselines": {
+        "format": "JSON",
+        "verified": true
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "seed": 42,
+    "crop_model": {
+        "status": "skipped"
+    },
+    "strategist": {
+        "status": "assumed_deterministic_via_temperature_0"
+    }
+}

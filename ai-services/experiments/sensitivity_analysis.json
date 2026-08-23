@@ -1,0 +1,6 @@
+{
+    "Highest_Impact_Component": "Strategist_Synthesizer",
+    "Lowest_Impact_Component": "Weather_Intelligence",
+    "Cascading_Failures": "Removing the Strategist causes a total collapse of conflict safety, overriding all individual agent capabilities.",
+    "Graceful_Degradation": "Removing a leaf agent (Crop/Market/Weather) triggers a -0.3 confidence penalty via the Strategist, ensuring graceful degradation without system crash."
+}

@@ -1,0 +1,82 @@
+[
+    {
+        "id": "flood",
+        "type": "Flood Risk",
+        "condition": "lambda w: w['rainfall'] > 80",
+        "severity": "High",
+        "message": "lambda w: f\"Heavy rainfall of {w['rainfall']}mm threatens waterlogging.\"",
+        "recommendation": "1. Open all drainage channels immediately.\n2. Do not apply fertiliser for 48h after rain.\n3. Check field bunds for overflow points."
+    },
+    {
+        "id": "waterlog",
+        "type": "Waterlogging Risk",
+        "condition": "lambda w: 40 < w['rainfall'] <= 80",
+        "severity": "Medium",
+        "message": "lambda w: f\"Moderate rainfall of {w['rainfall']}mm may cause waterlogging.\"",
+        "recommendation": "1. Check drainage. 2. Monitor for root rot. 3. Delay fertiliser application."
+    },
+    {
+        "id": "fungal_high",
+        "type": "Fungal Disease Risk",
+        "condition": "lambda w: w['humidity'] > 85",
+        "severity": "High",
+        "message": "lambda w: f\"Very high humidity ({w['humidity']}%) creates ideal conditions for blight and mildew.\"",
+        "recommendation": "1. Apply Mancozeb 75WP at 2g/litre.\n2. Spray early morning before 8 AM.\n3. Repeat every 7 days while humidity stays high.\n4. Avoid overhead irrigation."
+    },
+    {
+        "id": "fungal_medium",
+        "type": "Fungal Disease Risk",
+        "condition": "lambda w: 72 < w['humidity'] <= 85",
+        "severity": "Medium",
+        "message": "lambda w: f\"Elevated humidity ({w['humidity']}%) may promote fungal disease.\"",
+        "recommendation": "1. Monitor leaves closely every 2 days.\n2. Keep prophylactic fungicide ready.\n3. Maintain plant spacing for air circulation."
+    },
+    {
+        "id": "heat_high",
+        "type": "Heat Stress",
+        "condition": "lambda w: w['temperature'] > 42",
+        "severity": "High",
+        "message": "lambda w: f\"Extreme temperature of {w['temperature']}\u00b0C can damage flowers and reduce yield.\"",
+        "recommendation": "1. Irrigate at 5\u20137 AM only \u2014 never in afternoon heat.\n2. Apply mulch to retain soil moisture.\n3. Consider shade nets for vegetables.\n4. Delay fertiliser application."
+    },
+    {
+        "id": "heat_medium",
+        "type": "Heat Stress",
+        "condition": "lambda w: 38 <= w['temperature'] <= 42",
+        "severity": "Medium",
+        "message": "lambda w: f\"High temperature of {w['temperature']}\u00b0C may stress crops during flowering.\"",
+        "recommendation": "1. Ensure adequate soil moisture.\n2. Avoid pesticide spraying between 11 AM and 4 PM."
+    },
+    {
+        "id": "frost",
+        "type": "Frost Risk",
+        "condition": "lambda w: w['temperature'] < 4",
+        "severity": "High",
+        "message": "lambda w: f\"Temperature of {w['temperature']}\u00b0C risks frost damage to seedlings tonight.\"",
+        "recommendation": "1. Cover seedlings with plastic sheets or dry leaves tonight.\n2. Light irrigation before sunset raises soil temperature.\n3. Do not apply any chemicals before frost."
+    },
+    {
+        "id": "cold",
+        "type": "Cold Stress",
+        "condition": "lambda w: 4 <= w['temperature'] < 12",
+        "severity": "Medium",
+        "message": "lambda w: f\"Cool temperature of {w['temperature']}\u00b0C will slow growth and germination.\"",
+        "recommendation": "1. Delay sowing by 1\u20132 weeks if temperature stays below 10\u00b0C.\n2. Apply potassium-rich fertiliser for cold hardening.\n3. Mulch around seedlings."
+    },
+    {
+        "id": "wind_high",
+        "type": "Wind Damage",
+        "condition": "lambda w: w['windSpeed'] > 50",
+        "severity": "High",
+        "message": "lambda w: f\"Strong winds of {w['windSpeed']} km/h may lodge and damage standing crops.\"",
+        "recommendation": "1. Install windbreakers on the exposed side of the field.\n2. Stake or support tall plants immediately.\n3. Harvest mature crops early if wind is forecast for 2+ days."
+    },
+    {
+        "id": "wind_low",
+        "type": "Wind Advisory",
+        "condition": "lambda w: 30 <= w['windSpeed'] <= 50",
+        "severity": "Low",
+        "message": "lambda w: f\"Moderate winds of {w['windSpeed']} km/h expected.\"",
+        "recommendation": "1. Avoid pesticide and fertiliser spraying \u2014 it will drift.\n2. Check plant supports."
+    }
+]

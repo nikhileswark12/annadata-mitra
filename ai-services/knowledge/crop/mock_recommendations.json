@@ -1,0 +1,20 @@
+[
+    {
+        "crop": "rice",
+        "confidence": 85,
+        "reasoning": "Your Nitrogen, Phosphorus match rice requirements.",
+        "icon": "\ud83c\udf3e"
+    },
+    {
+        "crop": "maize",
+        "confidence": 70,
+        "reasoning": "Good nitrogen levels and warm climate support maize growth.",
+        "icon": "\ud83c\udf3d"
+    },
+    {
+        "crop": "wheat",
+        "confidence": 65,
+        "reasoning": "Balanced nutrients and moderate climate are suitable for wheat.",
+        "icon": "\ud83c\udf3f"
+    }
+]

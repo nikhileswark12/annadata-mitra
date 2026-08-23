@@ -1,0 +1,31 @@
+{
+    "Models": [
+        "*.keras",
+        "*.pkl",
+        "*.h5"
+    ],
+    "Datasets": [
+        "*.csv",
+        "*.nc"
+    ],
+    "Experiments": [
+        "ai-services/experiments/*.json"
+    ],
+    "Figures": [
+        "*.png",
+        "*.svg"
+    ],
+    "Reports": [
+        "README.md",
+        "phase_*_report.md",
+        "PROJECT_STATUS.md"
+    ],
+    "Reproducibility": [
+        "reviewer_reproducibility_bundle/"
+    ],
+    "Metadata": [
+        "CITATION.cff",
+        "LICENSE"
+    ],
+    "Status": "VERIFIED_PRESENT"
+}

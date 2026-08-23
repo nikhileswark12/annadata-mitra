@@ -1,0 +1,97 @@
+{
+    "Crop": [
+        {
+            "Model": "Random Forest (Verified)",
+            "Accuracy": 0.9909,
+            "Macro_F1": 0.9909
+        },
+        {
+            "Model": "Majority Class",
+            "Accuracy": 0.045454545454545456,
+            "Macro_F1": 0.0
+        },
+        {
+            "Model": "Random Baseline",
+            "Accuracy": 0.045454545454545456,
+            "Macro_F1": 0.045454545454545456
+        }
+    ],
+    "Vision": [
+        {
+            "Model": "MobileNetV2 (Improved)",
+            "Accuracy": 0.8871148459383753,
+            "Top3_Accuracy": 0.9708683490753174,
+            "Macro_F1": 0.7350206016764915
+        },
+        {
+            "Model": "Original Collapsed CNN",
+            "Accuracy": 0.0148,
+            "Top3_Accuracy": "N/A",
+            "Macro_F1": "N/A"
+        },
+        {
+            "Model": "Majority Class",
+            "Accuracy": 0.2257703081232493,
+            "Top3_Accuracy": 0.2257703081232493,
+            "Macro_F1": 0.0
+        },
+        {
+            "Model": "Random Baseline",
+            "Accuracy": 0.023809523809523808,
+            "Top3_Accuracy": 0.07142857142857142,
+            "Macro_F1": 0.023809523809523808
+        }
+    ],
+    "Weather": [
+        {
+            "System": "Current Deterministic Rules",
+            "Rule_Coverage": 1.0,
+            "Determinism": 1.0
+        },
+        {
+            "System": "No-reasoning Baseline",
+            "Rule_Coverage": 0.0,
+            "Determinism": 1.0
+        }
+    ],
+    "Market": [
+        {
+            "System": "Current Heuristic",
+            "Lookup": "Yes",
+            "Advisory": "Yes",
+            "Forecast": "No"
+        },
+        {
+            "System": "Static-price lookup",
+            "Lookup": "Yes",
+            "Advisory": "No",
+            "Forecast": "No"
+        },
+        {
+            "System": "Naive constant-price",
+            "Lookup": "No",
+            "Advisory": "No",
+            "Forecast": "Yes (Constant)"
+        }
+    ],
+    "Strategist": [
+        {
+            "System": "Full Strategist",
+            "Conflict_Safety": 1.0,
+            "Explainability": "High",
+            "Latency": "Low"
+        },
+        {
+            "System": "Naive Aggregation",
+            "Conflict_Safety": 0.0,
+            "Explainability": "Low",
+            "Latency": "Very Low"
+        },
+        {
+            "System": "Single-agent outputs",
+            "Conflict_Safety": "N/A",
+            "Explainability": "N/A",
+            "Latency": "Very Low"
+        }
+    ]
+}

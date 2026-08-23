@@ -1,0 +1,265 @@
+{
+    "test_loss": 2.419114828109741,
+    "test_accuracy": 0.3364145755767822,
+    "test_top3_accuracy": 0.5801120400428772,
+    "weighted_precision": 0.21553854883542556,
+    "weighted_recall": 0.33641456582633056,
+    "weighted_f1_score": 0.2204807814413457,
+    "macro_precision": 0.0738086865646925,
+    "macro_recall": 0.08858985072380023,
+    "macro_f1_score": 0.06894342734009051,
+    "per_class_metrics": {
+        "apple_black_rot": {
+            "precision": 0.5602409638554217,
+            "recall": 0.375,
+            "f1_score": 0.4492753623188406,
+            "support": 248.0
+        },
+        "apple_healthy": {
+            "precision": 0.578125,
+            "recall": 0.4457831325301205,
+            "f1_score": 0.5034013605442177,
+            "support": 249.0
+        },
+        "apple_rust": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 36.0
+        },
+        "apple_scab": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 70.0
+        },
+        "cassava_bacterial_blight": {
+            "precision": 0.17045454545454544,
+            "recall": 0.30612244897959184,
+            "f1_score": 0.21897810218978103,
+            "support": 49.0
+        },
+        "cassava_brown_streak_disease": {
+            "precision": 0.17582417582417584,
+            "recall": 0.2857142857142857,
+            "f1_score": 0.21768707482993196,
+            "support": 56.0
+        },
+        "cassava_green_mottle": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 48.0
+        },
+        "cassava_healthy": {
+            "precision": 0.1282051282051282,
+            "recall": 0.14705882352941177,
+            "f1_score": 0.136986301369863,
+            "support": 68.0
+        },
+        "cassava_mosaic_disease": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 45.0
+        },
+        "cherry_healthy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 89.0
+        },
+        "cherry_powdery_mildew": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 105.0
+        },
+        "chili_healthy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 10.0
+        },
+        "chili_leaf_curl": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 10.0
+        },
+        "chili_leaf_spot": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 10.0
+        },
+        "chili_whitefly": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 10.0
+        },
+        "chili_yellowish": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 8.0
+        },
+        "coffee_cercospora_leaf_spot": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 6.0
+        },
+        "coffee_healthy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 42.0
+        },
+        "coffee_red_spider_mite": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 17.0
+        },
+        "coffee_rust": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 41.0
+        },
+        "corn_common_rust": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 131.0
+        },
+        "corn_gray_leaf_spot": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 59.0
+        },
+        "corn_healthy": {
+            "precision": 0.4342629482071713,
+            "recall": 0.9316239316239316,
+            "f1_score": 0.592391304347826,
+            "support": 117.0
+        },
+        "corn_northern_leaf_blight": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 122.0
+        },
+        "cucumber_diseased": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 33.0
+        },
+        "cucumber_healthy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 34.0
+        },
+        "gauva_diseased": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 15.0
+        },
+        "gauva_healthy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 25.0
+        },
+        "grape_black_measles": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 138.0
+        },
+        "grape_black_rot": {
+            "precision": 0.3151010701545779,
+            "recall": 0.9863523573200993,
+            "f1_score": 0.47762090717933314,
+            "support": 806.0
+        },
+        "grape_healthy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 210.0
+        },
+        "grape_leaf_blight_isariopsis_leaf_spot": {
+            "precision": 0.2710843373493976,
+            "recall": 0.20930232558139536,
+            "f1_score": 0.2362204724409449,
+            "support": 215.0
+        },
+        "jamun_diseased": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 33.0
+        },
+        "jamun_healthy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 28.0
+        },
+        "lemon_diseased": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 8.0
+        },
+        "lemon_healthy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 14.0
+        },
+        "mango_diseased": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 24.0
+        },
+        "mango_healthy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 16.0
+        },
+        "mulberry_healthy_leaves": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 52.0
+        },
+        "mulberry_leaf_rust": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 49.0
+        },
+        "mulberry_leaf_spot": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 17.0
+        },
+        "peach_bacterial_spot": {
+            "precision": 0.4666666666666667,
+            "recall": 0.033816425120772944,
+            "f1_score": 0.06306306306306306,
+            "support": 207.0
+        }
+    }
+}

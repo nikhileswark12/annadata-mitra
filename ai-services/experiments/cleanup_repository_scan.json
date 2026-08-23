@@ -1,0 +1,9 @@
+{
+    "initial_size_bytes": 41724086086,
+    "scanned_directories": [
+        "frontend",
+        "backend",
+        "ai-services"
+    ],
+    "status": "SCANNED"
+}

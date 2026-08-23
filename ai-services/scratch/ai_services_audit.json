@@ -1,0 +1,10 @@
+{
+  "Agents": {
+    "Crop": "PARTIALLY VERIFIED",
+    "Weather": "PARTIALLY VERIFIED",
+    "Market": "PARTIALLY VERIFIED",
+    "Vision": "PARTIALLY VERIFIED",
+    "Strategist": "PARTIALLY VERIFIED"
+  },
+  "App_py_exists": true
+}

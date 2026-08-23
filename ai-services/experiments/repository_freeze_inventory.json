@@ -1,0 +1,54 @@
+{
+    "models/crop_recommendation/crop_model_baseline.pkl": {
+        "exists": false,
+        "size_bytes": 0
+    },
+    "models/crop_recommendation/crop_scaler_baseline.pkl": {
+        "exists": false,
+        "size_bytes": 0
+    },
+    "experiments/crop_baseline_metrics.json": {
+        "exists": false,
+        "size_bytes": 0
+    },
+    "experiments/crop_baseline_confusion_matrix.json": {
+        "exists": false,
+        "size_bytes": 0
+    },
+    "models/vision/improved/vision_model_improved.keras": {
+        "exists": true,
+        "size_bytes": 10230413
+    },
+    "experiments/vision_baseline_metrics.json": {
+        "exists": false,
+        "size_bytes": 0
+    },
+    "experiments/weather_baseline_metrics.json": {
+        "exists": false,
+        "size_bytes": 0
+    },
+    "experiments/market_baseline_metrics.json": {
+        "exists": false,
+        "size_bytes": 0
+    },
+    "experiments/strategist_e1_results.json": {
+        "exists": false,
+        "size_bytes": 0
+    },
+    "experiments/strategist_e2_explainability.json": {
+        "exists": false,
+        "size_bytes": 0
+    },
+    "experiments/strategist_e3_latency.json": {
+        "exists": false,
+        "size_bytes": 0
+    },
+    "experiments/strategist_e4_robustness.json": {
+        "exists": false,
+        "size_bytes": 0
+    },
+    "experiments/vision_e5_audit.json": {
+        "exists": true,
+        "size_bytes": 37300
+    }
+}

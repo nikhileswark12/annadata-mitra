@@ -1,0 +1,47 @@
+{
+    "structure": {
+        "Abstract": "Present",
+        "Introduction": "Present",
+        "Related Work": "Present",
+        "Methodology": "Present",
+        "System Architecture": "Present",
+        "Experimental Setup": "Present",
+        "Results": "Present",
+        "Discussion": "Present",
+        "Limitations": "Present",
+        "Future Work": "Present",
+        "Conclusion": "Present",
+        "References": "Present"
+    },
+    "metric_consistency": {
+        "Vision_Accuracy": {
+            "Required": 0.8871,
+            "Banned": [
+                0.9059,
+                0.0148
+            ],
+            "Status": "CLEAN"
+        },
+        "Crop_Accuracy": {
+            "Required": 0.9909,
+            "Banned": [],
+            "Status": "CLEAN"
+        },
+        "Vision_Top3": {
+            "Required": 0.9708,
+            "Banned": [],
+            "Status": "CLEAN"
+        },
+        "Strategist_Safety": {
+            "Required": 1.0,
+            "Banned": [
+                0.0
+            ],
+            "Status": "CLEAN"
+        },
+        "Latency": {
+            "Required": "E3 Verified (< 1.5s)",
+            "Status": "CLEAN"
+        }
+    }
+}

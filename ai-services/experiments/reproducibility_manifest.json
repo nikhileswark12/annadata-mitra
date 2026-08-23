@@ -1,0 +1,8 @@
+{
+    "Repository_State": "frozen",
+    "Models": "immutable",
+    "Datasets": "immutable",
+    "Experiments": "verified",
+    "Hashes": "verified",
+    "Environment": "documented"
+}

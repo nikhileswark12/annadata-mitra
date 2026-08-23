@@ -1,0 +1,16 @@
+{
+    "Included": [
+        "manuscript.tex",
+        "references.bib",
+        "figures/",
+        "tables.tex",
+        "appendix.tex"
+    ],
+    "Excluded": [
+        "node_modules/",
+        "__pycache__/",
+        ".pytest_cache/",
+        "temp_backups/"
+    ],
+    "Status": "CLEAN"
+}

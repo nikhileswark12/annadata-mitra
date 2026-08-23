@@ -1,0 +1,19 @@
+{
+    "framework": "scikit-learn",
+    "model_type": "RandomForestClassifier",
+    "configuration": {
+        "n_estimators": 100,
+        "random_state": 42
+    },
+    "features": [
+        "N",
+        "P",
+        "K",
+        "temperature",
+        "humidity",
+        "ph",
+        "rainfall"
+    ],
+    "classes": 22,
+    "random_seed": 42
+}

@@ -1,0 +1,24 @@
+{
+    "existing_gitignores_found": [
+        ".\\.gitignore",
+        ".pytest_cache\\.gitignore",
+        "ai-services\\.pytest_cache\\.gitignore",
+        "frontend\\.gitignore"
+    ],
+    "duplicate_rules": [
+        "node_modules/",
+        "__pycache__/"
+    ],
+    "conflicting_rules": [
+        "models/"
+    ],
+    "obsolete_rules": [
+        "*.log",
+        ".env"
+    ],
+    "missing_rules": [
+        ".pytest_cache/",
+        ".venv/"
+    ],
+    "Status": "REQUIRES_CONSOLIDATION"
+}

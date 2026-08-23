@@ -1,0 +1,26 @@
+{
+    "Majority Class": {
+        "Accuracy": 0.045454545454545456,
+        "Macro F1": 0.003952569169960474,
+        "Training Time (s)": 0.0010790824890136719,
+        "Inference Time (s)": 0.0
+    },
+    "Decision Tree": {
+        "Accuracy": 0.9818181818181818,
+        "Macro F1": 0.9815181894129261,
+        "Training Time (s)": 0.010024070739746094,
+        "Inference Time (s)": 0.0010001659393310547
+    },
+    "KNN": {
+        "Accuracy": 0.9727272727272728,
+        "Macro F1": 0.9723931039720511,
+        "Training Time (s)": 0.005237102508544922,
+        "Inference Time (s)": 0.010678768157958984
+    },
+    "Random Forest (Production)": {
+        "Accuracy": 0.990909090909091,
+        "Macro F1": 0.9908863066757803,
+        "Training Time (s)": 0.15558576583862305,
+        "Inference Time (s)": 0.030938386917114258
+    }
+}

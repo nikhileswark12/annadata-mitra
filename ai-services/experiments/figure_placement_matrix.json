@@ -1,0 +1,28 @@
+{
+    "Methodology": [
+        "figure_14_system_architecture",
+        "figure_15_multi_agent_workflow"
+    ],
+    "Results_Crop": [
+        "figure_01_crop_performance",
+        "figure_02_feature_importance",
+        "figure_03_crop_confusion"
+    ],
+    "Results_Vision": [
+        "figure_04_vision_comparison",
+        "figure_05_training_history",
+        "figure_06_vision_confusion"
+    ],
+    "Results_Strategist": [
+        "figure_07_conflict_resolution",
+        "figure_08_confidence_curve",
+        "figure_09_explainability",
+        "figure_10_agent_latency",
+        "figure_11_system_latency"
+    ],
+    "Results_Ablation": [
+        "figure_12_component_contribution",
+        "figure_13_ablation_waterfall"
+    ],
+    "Validation": "15/15 Figures placed. No unused figures."
+}

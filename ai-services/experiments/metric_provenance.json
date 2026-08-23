@@ -1,0 +1,7 @@
+{
+    "Vision Accuracy": {
+        "Source File": "experiments/vision_e5_audit.json",
+        "Verified": true,
+        "Value": 0.8871148459383753
+    }
+}

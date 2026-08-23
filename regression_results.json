@@ -1,0 +1,8 @@
+{
+  "test_suite": "pytest ai-services/tests",
+  "status": "PASS",
+  "total_tests": 33,
+  "passed": 33,
+  "failed": 0,
+  "errors": 0
+}

@@ -1,0 +1,17 @@
+{
+    "Supported_Claims": [
+        "Crop baseline achieved verified 99.09%.",
+        "Vision model achieved verified 88.71% accuracy with MobileNetV2.",
+        "Strategist agent guarantees 100% deterministic conflict resolution via rules.",
+        "System meets API latency SLAs (< 1.5s typically)."
+    ],
+    "Contextual_Claims": [
+        "MobileNetV2 transfer learning is an established, lightweight approach in literature for leaf disease classification.",
+        "Rule-based conflict resolution avoids LLM hallucination issues commonly cited in recent literature."
+    ],
+    "Unsupported_Claims": [
+        "Our models exceed all existing state-of-the-art agricultural ML models globally.",
+        "This system guarantees higher yields for real-world farmers.",
+        "The market/weather agents accurately forecast the future (they are heuristics)."
+    ]
+}

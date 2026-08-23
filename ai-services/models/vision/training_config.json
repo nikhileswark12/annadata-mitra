@@ -1,0 +1,37 @@
+{
+    "os": "<module 'os' from 'C:\\\\Users\\\\My\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\lib\\\\os.py'>",
+    "BASE_DIR": "F:\\WP\\Annadata Mitra\\annadata-mitra\\ai-services",
+    "DATASET_DIR": "F:\\WP\\Annadata Mitra\\annadata-mitra\\ai-services\\datasets\\vision\\canonical",
+    "EXPORT_DIR": "F:\\WP\\Annadata Mitra\\annadata-mitra\\ai-services\\models\\vision",
+    "TRAIN_DIR": "F:\\WP\\Annadata Mitra\\annadata-mitra\\ai-services\\datasets\\vision\\canonical\\train",
+    "VAL_DIR": "F:\\WP\\Annadata Mitra\\annadata-mitra\\ai-services\\datasets\\vision\\canonical\\val",
+    "TEST_DIR": "F:\\WP\\Annadata Mitra\\annadata-mitra\\ai-services\\datasets\\vision\\canonical\\test",
+    "IMAGE_SIZE": [
+        224,
+        224
+    ],
+    "INPUT_SHAPE": [
+        224,
+        224,
+        3
+    ],
+    "BATCH_SIZE": 8,
+    "CNN_FILTERS": [
+        32,
+        64,
+        128,
+        256
+    ],
+    "DROPOUT_RATE": 0.5,
+    "EPOCHS": 30,
+    "INITIAL_LR": 0.001,
+    "MIN_LR": 1e-06,
+    "PATIENCE_EARLY_STOP": 5,
+    "PATIENCE_REDUCE_LR": 2,
+    "MODEL_NAME": "vision_model.keras",
+    "CLASS_NAMES_FILE": "class_names.json",
+    "METADATA_FILE": "model_metadata.json",
+    "HISTORY_FILE": "training_history.json",
+    "METRICS_FILE": "evaluation_metrics.json",
+    "CONFUSION_MATRIX_FILE": "confusion_matrix.csv"
+}

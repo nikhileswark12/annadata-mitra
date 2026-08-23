@@ -1,0 +1,12 @@
+{
+    "High": {
+        "severity": "High",
+        "description": "AI model predicted {disease} based on leaf symptoms.",
+        "treatment": "1. Remove affected leaves.\n2. Ensure proper spacing for aeration.\n3. Apply appropriate fungicide if necessary."
+    },
+    "Medium": {
+        "severity": "Medium",
+        "description": "AI model predicted {disease} based on leaf symptoms.",
+        "treatment": "1. Remove affected leaves.\n2. Ensure proper spacing for aeration.\n3. Apply appropriate fungicide if necessary."
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "Claims_Supported": {
+        "Multi-Agent Deterministic Orchestration (Strategist)": "100% Conflict Resolution verified.",
+        "Transfer Learning Efficacy (Vision)": "88.71% Top-1, 97.08% Top-3 verified.",
+        "Precision Tabular Processing (Crop)": "99.09% RF Accuracy verified.",
+        "Sub-second Asynchronous Latency": "< 0.1s E2E verified.",
+        "Graceful Degradation": "Confidence Calibration penalization verified."
+    },
+    "Claims_Limited": {
+        "Heuristic Replacements": "Weather and Market currently rely on static/functional rules instead of ML."
+    },
+    "Claims_Future_Work": {
+        "Predictive TS Integration": "Integrating temporal forecasting for Market prices.",
+        "Localized Multilingual LLMs": "Moving NLP generation to edge devices."
+    },
+    "Banned_Phrases_Removed": [
+        "guarantees higher farmer yield",
+        "state-of-the-art forecasting"
+    ]
+}

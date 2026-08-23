@@ -1,0 +1,41 @@
+{
+    "currentPrice": 2200,
+    "predictedPrice": 2288,
+    "advice": "Wait",
+    "trendWatch": "Upward",
+    "demandInsight": "Rice demand is strong in Ahmedabad APMC. Prices expected to rise.",
+    "markets": [
+        {
+            "name": "Ahmedabad APMC",
+            "price": 2400,
+            "trend": "Up",
+            "distance": "15 km"
+        },
+        {
+            "name": "Vadodara Mandi",
+            "price": 2200,
+            "trend": "Stable",
+            "distance": "27 km"
+        },
+        {
+            "name": "Surat APMC",
+            "price": 2100,
+            "trend": "Down",
+            "distance": "39 km"
+        },
+        {
+            "name": "Rajkot Mandi",
+            "price": 2050,
+            "trend": "Stable",
+            "distance": "51 km"
+        },
+        {
+            "name": "Anand Mandi",
+            "price": 2000,
+            "trend": "Up",
+            "distance": "63 km"
+        }
+    ],
+    "totalValue": null,
+    "source": "csv-data"
+}

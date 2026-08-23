@@ -1,0 +1,61 @@
+{
+    "early_blight": {
+        "disease": "Early Blight",
+        "severity": "Medium",
+        "crops": [
+            "tomato",
+            "potato"
+        ],
+        "description": "Fungal disease (Alternaria solani) causing dark concentric rings on older lower leaves with yellow halo around spots. Common after rains.",
+        "treatment": "1. Remove and destroy all infected leaves immediately \u2014 do not compost them.\n2. Apply Mancozeb 75WP at 2g per litre of water.\n3. Spray every 7 days for 3 weeks.\n4. Avoid overhead irrigation \u2014 water at the base only.\n5. Rotate crops \u2014 do not plant tomato in the same field next season.",
+        "confidence_range": [
+            82,
+            92
+        ]
+    },
+    "late_blight": {
+        "disease": "Late Blight",
+        "severity": "High",
+        "crops": [
+            "tomato",
+            "potato"
+        ],
+        "description": "Water mold (Phytophthora infestans) causing dark water-soaked lesions on leaves and stems. Spreads extremely fast in cool, humid conditions.",
+        "treatment": "1. URGENT \u2014 act within 24 hours of seeing symptoms.\n2. Apply Metalaxyl + Mancozeb (Ridomil Gold) at 2.5g per litre.\n3. Spray entire field including unaffected plants.\n4. Repeat every 5 days while weather stays cool and humid.\n5. Remove and burn (not compost) heavily infected plants.",
+        "confidence_range": [
+            87,
+            94
+        ]
+    },
+    "powdery_mildew": {
+        "disease": "Powdery Mildew",
+        "severity": "Medium",
+        "crops": [
+            "wheat",
+            "grapes",
+            "cucurbits",
+            "mango"
+        ],
+        "description": "Fungal infection causing white powdery coating on upper leaf surfaces. Thrives in dry weather with high relative humidity and poor air circulation.",
+        "treatment": "1. Apply Sulphur 80WP at 3g per litre of water.\n2. Spray wettable sulphur every 10 days.\n3. Improve air circulation by maintaining recommended plant spacing.\n4. Avoid excess nitrogen fertiliser which promotes lush susceptible growth.",
+        "confidence_range": [
+            80,
+            89
+        ]
+    },
+    "leaf_rust": {
+        "disease": "Leaf Rust",
+        "severity": "Medium",
+        "crops": [
+            "wheat",
+            "rice",
+            "sorghum"
+        ],
+        "description": "Fungal disease (Puccinia sp.) causing orange-brown powdery pustules on the upper leaf surface. Can reduce wheat yield 30\u201340% if untreated.",
+        "treatment": "1. Apply Propiconazole 25EC at 1ml per litre of water.\n2. Spray at first sign of infection \u2014 early treatment is critical.\n3. One well-timed spray is usually sufficient if caught early.\n4. Use resistant varieties (HD-2967, DBW-187) in next season.\n5. Destroy crop residue after harvest to break the disease cycle.",
+        "confidence_range": [
+            85,
+            95
+        ]
+    }
+}

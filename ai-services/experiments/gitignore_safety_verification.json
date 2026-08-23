@@ -1,0 +1,30 @@
+{
+    "Tracked": {
+        "Models": [
+            "*.keras",
+            "*.pkl",
+            "*.h5"
+        ],
+        "Datasets": [
+            "*.csv",
+            "*.nc"
+        ],
+        "Experiments": [
+            "ai-services/experiments/*.json"
+        ],
+        "Figures": [
+            "*.png",
+            "*.svg"
+        ],
+        "Reproducibility_Bundle": [
+            "reviewer_reproducibility_bundle/"
+        ],
+        "Metadata": [
+            "README.md",
+            "LICENSE",
+            "CITATION.cff"
+        ]
+    },
+    "Accidental_Exclusions": "None",
+    "Status": "SAFE"
+}

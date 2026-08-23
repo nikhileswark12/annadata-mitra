@@ -1,0 +1,29 @@
+{
+    "PARAM_KEYS": [
+        "N",
+        "P",
+        "K",
+        "pH",
+        "temp",
+        "humidity",
+        "rainfall"
+    ],
+    "PARAM_LABELS": {
+        "N": "Nitrogen",
+        "P": "Phosphorus",
+        "K": "Potassium",
+        "pH": "pH",
+        "temp": "Temperature",
+        "humidity": "Humidity",
+        "rainfall": "Rainfall"
+    },
+    "PARAM_UNITS": {
+        "N": "",
+        "P": "",
+        "K": "",
+        "pH": "",
+        "temp": "\u00b0C",
+        "humidity": "%",
+        "rainfall": "mm"
+    }
+}

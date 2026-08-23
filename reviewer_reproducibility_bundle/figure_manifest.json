@@ -1,0 +1,17 @@
+{
+    "figure_01_crop_performance": "Figure 1. Crop Performance: Accuracy, Precision, Recall, and F1 score for the Random Forest model (Phase 6.7).",
+    "figure_02_feature_importance": "Figure 2. Crop Feature Importance: Relative Gini importance of input features in the Random Forest model.",
+    "figure_03_crop_confusion": "Figure 3. Crop Confusion Matrix: Strong diagonal representing 99.09% accuracy across 22 classes.",
+    "figure_04_vision_comparison": "Figure 4. Performance comparison between the original collapsed CNN and the MobileNetV2 transfer-learning model evaluated on the frozen canonical test set (Phase 7.5).",
+    "figure_05_training_history": "Figure 5. Vision Training History: Training and validation accuracy curves for the MobileNetV2 model.",
+    "figure_06_vision_confusion": "Figure 6. Vision Confusion Matrix: Diagnostic performance across 42 plant/disease classes.",
+    "figure_07_conflict_resolution": "Figure 7. Conflict Resolution Comparison: The Strategist agent guarantees 100% deterministic safety against contradictory advisories compared to naive aggregation.",
+    "figure_08_confidence_curve": "Figure 8. Confidence Degradation Curve: Linear penalty application communicating degraded system states (Phase 7.4).",
+    "figure_09_explainability": "Figure 9. Explainability Comparison: Source attribution and faithfulness derived from the E2 Explainability audit.",
+    "figure_10_agent_latency": "Figure 10. Agent Latency Breakdown: Execution time per agent during real-time requests (Phase 7.3).",
+    "figure_11_system_latency": "Figure 11. End-to-End Latency: Comparison of pure reasoning latency, full system round-trip latency, and production SLAs.",
+    "figure_12_component_contribution": "Figure 12. Component Contribution: Individual value deltas over baseline ablations (Phase 7.8).",
+    "figure_13_ablation_waterfall": "Figure 13. Ablation Waterfall: Cumulative system degradation as subsystems are isolated.",
+    "figure_14_system_architecture": "Figure 14. System Architecture: Production topology from React client through Node.js gateway to Flask Python agents.",
+    "figure_15_multi_agent_workflow": "Figure 15. Multi-Agent Workflow: Parallel execution of leaf agents feeding into the deterministic Strategist synthesizer."
+}

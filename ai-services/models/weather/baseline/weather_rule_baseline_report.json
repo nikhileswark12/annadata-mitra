@@ -1,0 +1,9 @@
+{
+  "status": "RULE-BASED BASELINE ESTABLISHED",
+  "determinism": true,
+  "location_sensitivity": true,
+  "empty_loc_handled": false,
+  "missing_loc_handled": true,
+  "test_count": 30,
+  "rule_count": 10
+}

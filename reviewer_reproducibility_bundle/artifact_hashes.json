@@ -1,0 +1,14 @@
+{
+    "datasets": {
+        "crop_raw": null,
+        "crop_train": "4119ddeb8d54532849292fa0fe4388efe4075d060cd4a8fddbc25dd2ac0c8e84",
+        "crop_test": "4a91e4b4a4a42307f8f7de3fa6b16648c423cbcadd397f52ea92e4b9a7b1bebb",
+        "vision_canonical_train": "dbf89fe28981d28a68fef9e07c9fb9ea90456fcd7ba11ba0fe33d93a5ed35ac6",
+        "vision_canonical_test": "034da34b3ed530c0aa4f66186ffb368609dba092cd09dd8873040286da48d9e5"
+    },
+    "models": {
+        "crop_model_baseline.pkl": null,
+        "crop_scaler_baseline.pkl": null,
+        "vision_model_improved.keras": "0c0d5f31f09b9eaabe14bc4b0aa96550c4a9e207d63c6c3f7360ac5c6ed6ee73"
+    }
+}

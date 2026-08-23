@@ -1,0 +1,797 @@
+{
+    "rice": {
+        "N": [
+            60,
+            120
+        ],
+        "P": [
+            30,
+            60
+        ],
+        "K": [
+            30,
+            60
+        ],
+        "pH": [
+            5.5,
+            7.0
+        ],
+        "temp": [
+            20,
+            35
+        ],
+        "humidity": [
+            70,
+            90
+        ],
+        "rainfall": [
+            150,
+            300
+        ],
+        "icon": "\ud83c\udf3e",
+        "season": [
+            "Kharif"
+        ],
+        "sowing": "June\u2013July",
+        "harvest": "October\u2013November"
+    },
+    "wheat": {
+        "N": [
+            60,
+            120
+        ],
+        "P": [
+            30,
+            60
+        ],
+        "K": [
+            20,
+            40
+        ],
+        "pH": [
+            6.0,
+            7.5
+        ],
+        "temp": [
+            10,
+            25
+        ],
+        "humidity": [
+            40,
+            70
+        ],
+        "rainfall": [
+            50,
+            150
+        ],
+        "icon": "\ud83c\udf3f",
+        "season": [
+            "Rabi"
+        ],
+        "sowing": "November\u2013December",
+        "harvest": "March\u2013April"
+    },
+    "maize": {
+        "N": [
+            60,
+            100
+        ],
+        "P": [
+            30,
+            60
+        ],
+        "K": [
+            30,
+            50
+        ],
+        "pH": [
+            5.5,
+            7.5
+        ],
+        "temp": [
+            18,
+            35
+        ],
+        "humidity": [
+            50,
+            80
+        ],
+        "rainfall": [
+            60,
+            120
+        ],
+        "icon": "\ud83c\udf3d",
+        "season": [
+            "Kharif",
+            "Rabi"
+        ],
+        "sowing": "June\u2013July (Kharif) / Oct\u2013Nov (Rabi)",
+        "harvest": "Sept\u2013Oct / Feb\u2013Mar"
+    },
+    "cotton": {
+        "N": [
+            50,
+            100
+        ],
+        "P": [
+            30,
+            60
+        ],
+        "K": [
+            30,
+            60
+        ],
+        "pH": [
+            5.8,
+            8.0
+        ],
+        "temp": [
+            25,
+            40
+        ],
+        "humidity": [
+            50,
+            80
+        ],
+        "rainfall": [
+            60,
+            120
+        ],
+        "icon": "\ud83e\udeb4",
+        "season": [
+            "Kharif"
+        ],
+        "sowing": "May\u2013June",
+        "harvest": "October\u2013December"
+    },
+    "sugarcane": {
+        "N": [
+            80,
+            120
+        ],
+        "P": [
+            40,
+            80
+        ],
+        "K": [
+            60,
+            100
+        ],
+        "pH": [
+            6.0,
+            7.5
+        ],
+        "temp": [
+            25,
+            40
+        ],
+        "humidity": [
+            60,
+            90
+        ],
+        "rainfall": [
+            100,
+            200
+        ],
+        "icon": "\ud83c\udf31",
+        "season": [
+            "Kharif"
+        ],
+        "sowing": "February\u2013March",
+        "harvest": "November\u2013February"
+    },
+    "chickpea": {
+        "N": [
+            10,
+            40
+        ],
+        "P": [
+            40,
+            80
+        ],
+        "K": [
+            20,
+            40
+        ],
+        "pH": [
+            6.0,
+            8.0
+        ],
+        "temp": [
+            15,
+            30
+        ],
+        "humidity": [
+            30,
+            60
+        ],
+        "rainfall": [
+            40,
+            100
+        ],
+        "icon": "\ud83e\uded8",
+        "season": [
+            "Rabi"
+        ],
+        "sowing": "October\u2013November",
+        "harvest": "February\u2013March"
+    },
+    "lentil": {
+        "N": [
+            10,
+            30
+        ],
+        "P": [
+            40,
+            70
+        ],
+        "K": [
+            15,
+            30
+        ],
+        "pH": [
+            6.0,
+            8.0
+        ],
+        "temp": [
+            10,
+            25
+        ],
+        "humidity": [
+            35,
+            65
+        ],
+        "rainfall": [
+            25,
+            75
+        ],
+        "icon": "\ud83e\uded8",
+        "season": [
+            "Rabi"
+        ],
+        "sowing": "October\u2013November",
+        "harvest": "February\u2013March"
+    },
+    "mungbean": {
+        "N": [
+            15,
+            30
+        ],
+        "P": [
+            30,
+            60
+        ],
+        "K": [
+            20,
+            40
+        ],
+        "pH": [
+            6.0,
+            7.5
+        ],
+        "temp": [
+            25,
+            35
+        ],
+        "humidity": [
+            60,
+            80
+        ],
+        "rainfall": [
+            50,
+            100
+        ],
+        "icon": "\ud83c\udf3f",
+        "season": [
+            "Kharif",
+            "Zaid"
+        ],
+        "sowing": "June\u2013July / March",
+        "harvest": "September / May\u2013June"
+    },
+    "jute": {
+        "N": [
+            60,
+            90
+        ],
+        "P": [
+            30,
+            50
+        ],
+        "K": [
+            30,
+            50
+        ],
+        "pH": [
+            5.5,
+            7.0
+        ],
+        "temp": [
+            25,
+            38
+        ],
+        "humidity": [
+            75,
+            95
+        ],
+        "rainfall": [
+            150,
+            250
+        ],
+        "icon": "\ud83c\udf3f",
+        "season": [
+            "Kharif"
+        ],
+        "sowing": "March\u2013May",
+        "harvest": "July\u2013September"
+    },
+    "coffee": {
+        "N": [
+            60,
+            80
+        ],
+        "P": [
+            40,
+            70
+        ],
+        "K": [
+            40,
+            60
+        ],
+        "pH": [
+            5.5,
+            6.5
+        ],
+        "temp": [
+            15,
+            28
+        ],
+        "humidity": [
+            70,
+            90
+        ],
+        "rainfall": [
+            100,
+            200
+        ],
+        "icon": "\u2615",
+        "season": [
+            "Kharif"
+        ],
+        "sowing": "June\u2013July",
+        "harvest": "November\u2013February"
+    },
+    "banana": {
+        "N": [
+            80,
+            120
+        ],
+        "P": [
+            30,
+            50
+        ],
+        "K": [
+            80,
+            120
+        ],
+        "pH": [
+            5.5,
+            7.0
+        ],
+        "temp": [
+            20,
+            35
+        ],
+        "humidity": [
+            70,
+            90
+        ],
+        "rainfall": [
+            100,
+            200
+        ],
+        "icon": "\ud83c\udf4c",
+        "season": [
+            "Kharif"
+        ],
+        "sowing": "June\u2013September",
+        "harvest": "12\u201315 months later"
+    },
+    "mango": {
+        "N": [
+            40,
+            80
+        ],
+        "P": [
+            20,
+            40
+        ],
+        "K": [
+            30,
+            60
+        ],
+        "pH": [
+            5.5,
+            7.5
+        ],
+        "temp": [
+            24,
+            40
+        ],
+        "humidity": [
+            50,
+            80
+        ],
+        "rainfall": [
+            75,
+            150
+        ],
+        "icon": "\ud83e\udd6d",
+        "season": [
+            "Zaid"
+        ],
+        "sowing": "July\u2013August (planting)",
+        "harvest": "April\u2013June"
+    },
+    "grapes": {
+        "N": [
+            30,
+            60
+        ],
+        "P": [
+            20,
+            40
+        ],
+        "K": [
+            30,
+            60
+        ],
+        "pH": [
+            6.0,
+            7.5
+        ],
+        "temp": [
+            15,
+            35
+        ],
+        "humidity": [
+            40,
+            70
+        ],
+        "rainfall": [
+            25,
+            75
+        ],
+        "icon": "\ud83c\udf47",
+        "season": [
+            "Rabi"
+        ],
+        "sowing": "January\u2013March (pruning)",
+        "harvest": "March\u2013May"
+    },
+    "pomegranate": {
+        "N": [
+            30,
+            60
+        ],
+        "P": [
+            20,
+            40
+        ],
+        "K": [
+            30,
+            50
+        ],
+        "pH": [
+            5.5,
+            7.5
+        ],
+        "temp": [
+            25,
+            40
+        ],
+        "humidity": [
+            40,
+            70
+        ],
+        "rainfall": [
+            40,
+            80
+        ],
+        "icon": "\ud83c\udf4e",
+        "season": [
+            "Kharif"
+        ],
+        "sowing": "July\u2013August",
+        "harvest": "February\u2013March"
+    },
+    "watermelon": {
+        "N": [
+            50,
+            80
+        ],
+        "P": [
+            30,
+            50
+        ],
+        "K": [
+            40,
+            70
+        ],
+        "pH": [
+            6.0,
+            7.5
+        ],
+        "temp": [
+            25,
+            38
+        ],
+        "humidity": [
+            50,
+            70
+        ],
+        "rainfall": [
+            40,
+            80
+        ],
+        "icon": "\ud83c\udf49",
+        "season": [
+            "Zaid"
+        ],
+        "sowing": "February\u2013March",
+        "harvest": "May\u2013June"
+    },
+    "papaya": {
+        "N": [
+            50,
+            80
+        ],
+        "P": [
+            30,
+            50
+        ],
+        "K": [
+            50,
+            80
+        ],
+        "pH": [
+            5.5,
+            7.0
+        ],
+        "temp": [
+            22,
+            38
+        ],
+        "humidity": [
+            60,
+            85
+        ],
+        "rainfall": [
+            60,
+            150
+        ],
+        "icon": "\ud83c\udf48",
+        "season": [
+            "Kharif"
+        ],
+        "sowing": "June\u2013October",
+        "harvest": "9\u201312 months later"
+    },
+    "orange": {
+        "N": [
+            40,
+            70
+        ],
+        "P": [
+            20,
+            40
+        ],
+        "K": [
+            30,
+            50
+        ],
+        "pH": [
+            5.5,
+            7.5
+        ],
+        "temp": [
+            18,
+            32
+        ],
+        "humidity": [
+            50,
+            75
+        ],
+        "rainfall": [
+            75,
+            150
+        ],
+        "icon": "\ud83c\udf4a",
+        "season": [
+            "Rabi"
+        ],
+        "sowing": "July\u2013September (planting)",
+        "harvest": "November\u2013January"
+    },
+    "coconut": {
+        "N": [
+            50,
+            80
+        ],
+        "P": [
+            30,
+            50
+        ],
+        "K": [
+            60,
+            100
+        ],
+        "pH": [
+            5.5,
+            8.0
+        ],
+        "temp": [
+            25,
+            38
+        ],
+        "humidity": [
+            70,
+            90
+        ],
+        "rainfall": [
+            100,
+            250
+        ],
+        "icon": "\ud83e\udd65",
+        "season": [
+            "Kharif"
+        ],
+        "sowing": "June\u2013September",
+        "harvest": "Year-round (perennial)"
+    },
+    "kidneybeans": {
+        "N": [
+            15,
+            30
+        ],
+        "P": [
+            50,
+            90
+        ],
+        "K": [
+            20,
+            40
+        ],
+        "pH": [
+            6.0,
+            7.5
+        ],
+        "temp": [
+            15,
+            30
+        ],
+        "humidity": [
+            40,
+            70
+        ],
+        "rainfall": [
+            40,
+            100
+        ],
+        "icon": "\ud83e\uded8",
+        "season": [
+            "Kharif"
+        ],
+        "sowing": "June\u2013July",
+        "harvest": "September\u2013October"
+    },
+    "pigeonpeas": {
+        "N": [
+            15,
+            30
+        ],
+        "P": [
+            40,
+            70
+        ],
+        "K": [
+            15,
+            30
+        ],
+        "pH": [
+            5.5,
+            7.5
+        ],
+        "temp": [
+            25,
+            38
+        ],
+        "humidity": [
+            40,
+            70
+        ],
+        "rainfall": [
+            40,
+            100
+        ],
+        "icon": "\ud83c\udf3f",
+        "season": [
+            "Kharif"
+        ],
+        "sowing": "June\u2013July",
+        "harvest": "November\u2013January"
+    },
+    "mothbeans": {
+        "N": [
+            10,
+            25
+        ],
+        "P": [
+            25,
+            50
+        ],
+        "K": [
+            15,
+            30
+        ],
+        "pH": [
+            6.5,
+            8.0
+        ],
+        "temp": [
+            28,
+            42
+        ],
+        "humidity": [
+            30,
+            60
+        ],
+        "rainfall": [
+            20,
+            60
+        ],
+        "icon": "\ud83c\udf3f",
+        "season": [
+            "Kharif"
+        ],
+        "sowing": "July",
+        "harvest": "September\u2013October"
+    },
+    "blackgram": {
+        "N": [
+            15,
+            30
+        ],
+        "P": [
+            40,
+            70
+        ],
+        "K": [
+            20,
+            40
+        ],
+        "pH": [
+            6.0,
+            7.5
+        ],
+        "temp": [
+            25,
+            38
+        ],
+        "humidity": [
+            60,
+            80
+        ],
+        "rainfall": [
+            50,
+            100
+        ],
+        "icon": "\ud83e\uded8",
+        "season": [
+            "Kharif",
+            "Rabi"
+        ],
+        "sowing": "June\u2013July / November",
+        "harvest": "Sept\u2013Oct / Feb"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "mean_confidence": 0.9590000000000001,
+    "median_confidence": 0.99,
+    "mean_conf_correct": 0.9620183486238534,
+    "mean_conf_incorrect": 0.63,
+    "incorrect_gt_90": 0,
+    "incorrect_gt_80": 0,
+    "incorrect_lt_60": 1
+}

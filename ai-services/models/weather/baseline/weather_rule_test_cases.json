@@ -1,0 +1,332 @@
+[
+  {
+    "id": "boundary_rainfall_79.9",
+    "weather": {
+      "temperature": 25,
+      "humidity": 50,
+      "rainfall": 79.9,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_rainfall_80",
+    "weather": {
+      "temperature": 25,
+      "humidity": 50,
+      "rainfall": 80,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_rainfall_80.1",
+    "weather": {
+      "temperature": 25,
+      "humidity": 50,
+      "rainfall": 80.1,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_rainfall_39.9",
+    "weather": {
+      "temperature": 25,
+      "humidity": 50,
+      "rainfall": 39.9,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_rainfall_40",
+    "weather": {
+      "temperature": 25,
+      "humidity": 50,
+      "rainfall": 40,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_rainfall_40.1",
+    "weather": {
+      "temperature": 25,
+      "humidity": 50,
+      "rainfall": 40.1,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_humidity_84.9",
+    "weather": {
+      "temperature": 25,
+      "humidity": 84.9,
+      "rainfall": 0,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_humidity_85",
+    "weather": {
+      "temperature": 25,
+      "humidity": 85,
+      "rainfall": 0,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_humidity_85.1",
+    "weather": {
+      "temperature": 25,
+      "humidity": 85.1,
+      "rainfall": 0,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_humidity_71.9",
+    "weather": {
+      "temperature": 25,
+      "humidity": 71.9,
+      "rainfall": 0,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_humidity_72",
+    "weather": {
+      "temperature": 25,
+      "humidity": 72,
+      "rainfall": 0,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_humidity_72.1",
+    "weather": {
+      "temperature": 25,
+      "humidity": 72.1,
+      "rainfall": 0,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_temperature_41.9",
+    "weather": {
+      "temperature": 41.9,
+      "humidity": 50,
+      "rainfall": 0,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_temperature_42",
+    "weather": {
+      "temperature": 42,
+      "humidity": 50,
+      "rainfall": 0,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_temperature_42.1",
+    "weather": {
+      "temperature": 42.1,
+      "humidity": 50,
+      "rainfall": 0,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_temperature_37.9",
+    "weather": {
+      "temperature": 37.9,
+      "humidity": 50,
+      "rainfall": 0,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_temperature_38",
+    "weather": {
+      "temperature": 38,
+      "humidity": 50,
+      "rainfall": 0,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_temperature_38.1",
+    "weather": {
+      "temperature": 38.1,
+      "humidity": 50,
+      "rainfall": 0,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_temperature_3.9",
+    "weather": {
+      "temperature": 3.9,
+      "humidity": 50,
+      "rainfall": 0,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_temperature_4",
+    "weather": {
+      "temperature": 4,
+      "humidity": 50,
+      "rainfall": 0,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_temperature_4.1",
+    "weather": {
+      "temperature": 4.1,
+      "humidity": 50,
+      "rainfall": 0,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_temperature_11.9",
+    "weather": {
+      "temperature": 11.9,
+      "humidity": 50,
+      "rainfall": 0,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_temperature_12",
+    "weather": {
+      "temperature": 12,
+      "humidity": 50,
+      "rainfall": 0,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_temperature_12.1",
+    "weather": {
+      "temperature": 12.1,
+      "humidity": 50,
+      "rainfall": 0,
+      "windSpeed": 10,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_windSpeed_49.9",
+    "weather": {
+      "temperature": 25,
+      "humidity": 50,
+      "rainfall": 0,
+      "windSpeed": 49.9,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_windSpeed_50",
+    "weather": {
+      "temperature": 25,
+      "humidity": 50,
+      "rainfall": 0,
+      "windSpeed": 50,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_windSpeed_50.1",
+    "weather": {
+      "temperature": 25,
+      "humidity": 50,
+      "rainfall": 0,
+      "windSpeed": 50.1,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_windSpeed_29.9",
+    "weather": {
+      "temperature": 25,
+      "humidity": 50,
+      "rainfall": 0,
+      "windSpeed": 29.9,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_windSpeed_30",
+    "weather": {
+      "temperature": 25,
+      "humidity": 50,
+      "rainfall": 0,
+      "windSpeed": 30,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  },
+  {
+    "id": "boundary_windSpeed_30.1",
+    "weather": {
+      "temperature": 25,
+      "humidity": 50,
+      "rainfall": 0,
+      "windSpeed": 30.1,
+      "condition": "Clear"
+    },
+    "expected": "rule-dependent"
+  }
+]

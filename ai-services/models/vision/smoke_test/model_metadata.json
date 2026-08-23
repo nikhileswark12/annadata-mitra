@@ -1,0 +1,18 @@
+{
+    "dataset_version": "canonical-v1",
+    "training_date": "2026-08-08T07:39:36.139151",
+    "tensorflow_version": "2.15.0",
+    "input_shape": [
+        224,
+        224,
+        3
+    ],
+    "class_count": 42,
+    "model_parameters": 401130,
+    "epochs_trained": 1,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "final_val_accuracy": 0.0,
+    "test_accuracy": 0.0,
+    "test_loss": 3.724137783050537
+}
