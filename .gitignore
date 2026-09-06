@@ -98,3 +98,27 @@ runs/
 temp_logs/
 intermediate_dumps/
 transient_benchmark_files/
+
+# ==============================================================================
+# ai-services Cleanup
+# ==============================================================================
+ai-services/venv/
+ai-services/.coverage
+ai-services/**/__pycache__/
+ai-services/**/.pytest_cache/
+ai-services/**/.mypy_cache/
+ai-services/**/.ruff_cache/
+ai-services/**/.ipynb_checkpoints/
+ai-services/models/**/logs/
+ai-services/models/**/checkpoints/
+ai-services/scratch/*.json
+!ai-services/scratch/*.py
+ai-services/scratch/*.h5
+ai-services/scratch/*.keras
+ai-services/ai_code_*.txt
+ai-services/ai_services_code.txt
+ai-services/config_dump*.json
+ai-services/datasets/vision/PlantVillage/
+ai-services/datasets/vision/Plant Disease Data/
+ai-services/datasets/vision/archive (1)/
+ai-services/datasets/weather/*.exe

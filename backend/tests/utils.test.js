@@ -14,7 +14,7 @@ describe('ApiResponse Utility', () => {
     ApiResponse.success(mockRes, 'Data fetched', { id: 1 });
     expect(mockRes.status).toHaveBeenCalledWith(200);
     expect(mockRes.json).toHaveBeenCalledWith(expect.objectContaining({
-      status: 'success',
+      success: true,
       message: 'Data fetched',
       data: { id: 1 }
     }));
@@ -24,8 +24,8 @@ describe('ApiResponse Utility', () => {
     ApiResponse.error(mockRes, 'Not found', null, 404);
     expect(mockRes.status).toHaveBeenCalledWith(404);
     expect(mockRes.json).toHaveBeenCalledWith(expect.objectContaining({
-      status: 'error',
-      message: 'Not found'
+      success: false,
+      error: 'Not found'
     }));
   });
 });

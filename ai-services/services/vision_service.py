@@ -17,7 +17,7 @@ class RealVisionPredictor(PredictionInterface):
     def load_model(self):
         from core.config import Config
         import tensorflow as tf
-        self.model = tf.keras.models.load_model(Config.VISION_MODEL_PATH)
+        self.model = tf.keras.models.load_model(Config.VISION_MODEL_PATH, compile=False)
         with open(Config.VISION_CLASS_NAMES_PATH, 'r') as f:
             self.class_names = json.load(f)
 
@@ -77,16 +77,22 @@ class RealVisionPredictor(PredictionInterface):
             "treatment": explanation.get("factors")
         }
 
+from core.config import Config
+
 try:
-    if os.path.exists(MODEL_PATH) and os.path.exists(CLASS_NAMES_PATH):
-        registry.register('vision', RealVisionPredictor())
-    else:
+    if Config.USE_MOCK_MODELS:
         from mock.predictors import MockVisionPredictor
         registry.register('vision', MockVisionPredictor())
+        logging.info("Vision service initialized with MockVisionPredictor (USE_MOCK_MODELS=True)")
+    else:
+        if os.path.exists(MODEL_PATH) and os.path.exists(CLASS_NAMES_PATH):
+            registry.register('vision', RealVisionPredictor())
+            logging.info("Vision service initialized with RealVisionPredictor")
+        else:
+            raise FileNotFoundError(f"Vision model files not found: {MODEL_PATH} or {CLASS_NAMES_PATH}")
 except Exception as e:
-    logging.info(f"Warning: Failed to load RealVisionPredictor due to Exception: {e}. Falling back to mock predictor.")
-    from mock.predictors import MockVisionPredictor
-    registry.register('vision', MockVisionPredictor())
+    logging.error(f"CRITICAL: Failed to load RealVisionPredictor due to Exception: {e}")
+    # Do NOT silently register mock. Leave it unregistered so it fails health check and requests.
 
 @vision_bp.route('/disease-detect', methods=['POST'])
 def disease_detect():

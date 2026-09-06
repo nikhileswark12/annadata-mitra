@@ -1,0 +1,80 @@
+[
+  {
+    "File": "ai-services/training/vision\\augmentations.py",
+    "Used during training?": true,
+    "Used during evaluation?": false,
+    "Used during inference?": false
+  },
+  {
+    "File": "ai-services/training/vision\\config.py",
+    "Used during training?": true,
+    "Used during evaluation?": false,
+    "Used during inference?": false
+  },
+  {
+    "File": "ai-services/training/vision\\dataset_loader.py",
+    "Used during training?": true,
+    "Used during evaluation?": false,
+    "Used during inference?": false
+  },
+  {
+    "File": "ai-services/training/vision\\evaluate.py",
+    "Used during training?": true,
+    "Used during evaluation?": true,
+    "Used during inference?": true
+  },
+  {
+    "File": "ai-services/training/vision\\export.py",
+    "Used during training?": true,
+    "Used during evaluation?": false,
+    "Used during inference?": false
+  },
+  {
+    "File": "ai-services/training/vision\\memory_smoke_test.py",
+    "Used during training?": true,
+    "Used during evaluation?": false,
+    "Used during inference?": true
+  },
+  {
+    "File": "ai-services/training/vision\\model_builder.py",
+    "Used during training?": true,
+    "Used during evaluation?": false,
+    "Used during inference?": false
+  },
+  {
+    "File": "ai-services/training/vision\\smoke_test.py",
+    "Used during training?": true,
+    "Used during evaluation?": true,
+    "Used during inference?": true
+  },
+  {
+    "File": "ai-services/training/vision\\train.py",
+    "Used during training?": true,
+    "Used during evaluation?": true,
+    "Used during inference?": false
+  },
+  {
+    "File": "ai-services/training/vision\\trainer.py",
+    "Used during training?": true,
+    "Used during evaluation?": false,
+    "Used during inference?": false
+  },
+  {
+    "File": "ai-services/training/vision\\utils.py",
+    "Used during training?": true,
+    "Used during evaluation?": false,
+    "Used during inference?": false
+  },
+  {
+    "File": "ai-services/training\\train_crop_model.py",
+    "Used during training?": true,
+    "Used during evaluation?": false,
+    "Used during inference?": true
+  },
+  {
+    "File": "ai-services/training\\train_vision_model.py",
+    "Used during training?": true,
+    "Used during evaluation?": false,
+    "Used during inference?": false
+  }
+]

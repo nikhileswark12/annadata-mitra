@@ -1,8 +1,0 @@
-{
-  "flask_success_schema": {"success": true, "message": "string", "data": "object"},
-  "flask_error_schema": {"success": false, "error": "string", "details": "optional"},
-  "node_success_schema": {"success": true, "message": "string", "data": "object"},
-  "node_error_schema": {"success": false, "error": "string", "details": "optional"},
-  "alignment": "PASS",
-  "notes": "React frontend strictly expects `response.data?.success === true`. Node accurately proxies Flask's native boolean flag."
-}

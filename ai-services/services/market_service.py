@@ -11,7 +11,7 @@ from reasoning.market_reasoner import MarketReasoner
 
 market_bp = Blueprint('market', __name__)
 
-DATA_PATH = os.path.join(os.path.dirname(__file__), '../datasets/mandi_prices.csv')
+DATA_PATH = os.path.join(os.path.dirname(__file__), '../datasets/mandi/mandi_prices.csv')
 
 class RealMarketPredictor(PredictionInterface):
     def load_model(self):
@@ -69,12 +69,18 @@ class RealMarketPredictor(PredictionInterface):
         # For mock predictor fallback
         return reasoning
 
+from core.config import Config
+
 try:
-    registry.register('market', RealMarketPredictor())
+    if Config.USE_MOCK_MODELS:
+        from mock.predictors import MockMarketPredictor
+        registry.register('market', MockMarketPredictor())
+        logging.info("Market service initialized with MockMarketPredictor (USE_MOCK_MODELS=True)")
+    else:
+        registry.register('market', RealMarketPredictor())
+        logging.info("Market service initialized with RealMarketPredictor")
 except Exception as e:
-    logging.info(f"Warning: Failed to load RealMarketPredictor due to Exception: {e}. Falling back to mock predictor.")
-    from mock.predictors import MockMarketPredictor
-    registry.register('market', MockMarketPredictor())
+    logging.error(f"CRITICAL: Failed to load RealMarketPredictor due to Exception: {e}")
 
 @market_bp.route('/market-insights', methods=['POST'])
 def market_insights():

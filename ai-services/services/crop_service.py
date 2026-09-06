@@ -67,12 +67,18 @@ class RealCropPredictor(PredictionInterface):
             })
         return res
 
+from core.config import Config
+
 try:
-    registry.register('crop', RealCropPredictor())
+    if Config.USE_MOCK_MODELS:
+        from mock.predictors import MockCropPredictor
+        registry.register('crop', MockCropPredictor())
+        logging.info("Crop service initialized with MockCropPredictor (USE_MOCK_MODELS=True)")
+    else:
+        registry.register('crop', RealCropPredictor())
+        logging.info("Crop service initialized with RealCropPredictor")
 except Exception as e:
-    logging.info(f"Warning: Failed to load RealCropPredictor due to Exception: {e}. Falling back to mock predictor.")
-    from mock.predictors import MockCropPredictor
-    registry.register('crop', MockCropPredictor())
+    logging.error(f"CRITICAL: Failed to load RealCropPredictor due to Exception: {e}")
 
 @crop_bp.route('/crop-recommend', methods=['POST'])
 def crop_recommend():

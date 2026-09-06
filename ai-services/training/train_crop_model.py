@@ -35,13 +35,13 @@ def generate_synthetic_data(num_samples=2200):
     return df
 
 def train_model():
-    logging.info("Generating synthetic dataset...")
-    df = generate_synthetic_data()
+    logging.info("Loading real dataset...")
     
-    # Save dataset
-    dataset_dir = os.path.join(os.path.dirname(__file__), '../datasets')
-    os.makedirs(dataset_dir, exist_ok=True)
-    df.to_csv(os.path.join(dataset_dir, 'synthetic_crop_data.csv'), index=False)
+    dataset_path = os.path.join(os.path.dirname(__file__), '../datasets/crop/raw/Crop_recommendation.csv')
+    if not os.path.exists(dataset_path):
+        raise FileNotFoundError(f"Dataset not found at {dataset_path}")
+        
+    df = pd.read_csv(dataset_path)
     
     X = df.drop('label', axis=1)
     y = df['label']
@@ -58,7 +58,7 @@ def train_model():
     
     y_pred = model.predict(X_test_scaled)
     acc = accuracy_score(y_test, y_pred)
-    logging.info(f"Model Accuracy (Synthetic Data): {acc * 100:.2f}%")
+    logging.info(f"Model Accuracy (Real Data): {acc * 100:.2f}%")
     
     # Save model and scaler
     model_dir = os.path.join(os.path.dirname(__file__), '../models')
@@ -73,4 +73,5 @@ def train_model():
     logging.info(f"Scaler saved to {scaler_path}")
 
 if __name__ == '__main__':
+    logging.basicConfig(level=logging.INFO)
     train_model()

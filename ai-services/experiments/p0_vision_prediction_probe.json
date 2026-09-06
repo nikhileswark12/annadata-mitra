@@ -1,0 +1,75 @@
+{
+    "model_path": "F:\\Annadata Mitra\\annadata-mitra\\ai-services\\models\\vision_model.h5",
+    "probe_successful": true,
+    "error": null,
+    "predictions": [
+        {
+            "image_type": "zeros",
+            "top_3": [
+                {
+                    "class": "yellow_mosaic",
+                    "confidence": 0.2604520618915558
+                },
+                {
+                    "class": "powdery_mildew",
+                    "confidence": 0.1472170203924179
+                },
+                {
+                    "class": "downy_mildew",
+                    "confidence": 0.10838436335325241
+                }
+            ]
+        },
+        {
+            "image_type": "ones",
+            "top_3": [
+                {
+                    "class": "late_blight",
+                    "confidence": 0.14771181344985962
+                },
+                {
+                    "class": "yellow_mosaic",
+                    "confidence": 0.14117856323719025
+                },
+                {
+                    "class": "downy_mildew",
+                    "confidence": 0.13843706250190735
+                }
+            ]
+        },
+        {
+            "image_type": "random_1",
+            "top_3": [
+                {
+                    "class": "yellow_mosaic",
+                    "confidence": 0.4751201272010803
+                },
+                {
+                    "class": "leaf_curl",
+                    "confidence": 0.24462220072746277
+                },
+                {
+                    "class": "late_blight",
+                    "confidence": 0.09193789213895798
+                }
+            ]
+        },
+        {
+            "image_type": "random_2",
+            "top_3": [
+                {
+                    "class": "yellow_mosaic",
+                    "confidence": 0.6990121006965637
+                },
+                {
+                    "class": "leaf_curl",
+                    "confidence": 0.052746713161468506
+                },
+                {
+                    "class": "bacterial_wilt",
+                    "confidence": 0.04328468441963196
+                }
+            ]
+        }
+    ]
+}

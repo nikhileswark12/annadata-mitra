@@ -61,8 +61,9 @@ class RealWeatherPredictor(PredictionInterface):
 
 try:
     registry.register('weather', RealWeatherPredictor())
+    logging.info("Weather service initialized with RealWeatherPredictor")
 except Exception as e:
-    logging.info(f"Warning: Failed to load RealWeatherPredictor due to Exception: {e}")
+    logging.error(f"CRITICAL: Failed to load RealWeatherPredictor due to Exception: {e}")
 
 @weather_bp.route('/weather-risk', methods=['POST'])
 def weather_risk():

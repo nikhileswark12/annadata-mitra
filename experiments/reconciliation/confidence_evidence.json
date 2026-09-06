@@ -1,0 +1,5 @@
+{
+  "status": "NOT REPRODUCIBLE",
+  "reason": "No dynamic confidence aggregation script or 100-sample dataset exists in the repository. The claimed SD of 4.2 cannot be verified.",
+  "simulated_sd": null
+}

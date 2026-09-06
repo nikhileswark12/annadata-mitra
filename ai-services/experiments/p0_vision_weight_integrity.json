@@ -1,0 +1,29 @@
+{
+    "model_path": "F:\\Annadata Mitra\\annadata-mitra\\ai-services\\models\\vision_model.h5",
+    "exists": true,
+    "size_bytes": 10723080,
+    "md5": "3bf0e6f96b9bd7c56b1bb923ae3c4e55",
+    "load_successful": true,
+    "error": null,
+    "traceback": null,
+    "architecture": null,
+    "input_shape": "(None, 224, 224, 3)",
+    "output_shape": "(None, 10)",
+    "trainable_params": 330506,
+    "non_trainable_params": 2257984,
+    "weight_stats": {
+        "first_layer": {
+            "mean": -0.004989940673112869,
+            "std": 0.15794813632965088,
+            "zeros": 0
+        },
+        "last_layer": {
+            "mean": 0.0017133805667981505,
+            "std": 0.08809946477413177,
+            "zeros": 0
+        }
+    },
+    "class_count_in_model": 10,
+    "class_count_in_json": 10,
+    "classes_match": true
+}

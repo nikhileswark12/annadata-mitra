@@ -40,9 +40,9 @@ describe('Middleware Tests', () => {
 
       expect(res.status).toHaveBeenCalledWith(422);
       expect(res.json).toHaveBeenCalledWith(expect.objectContaining({
-        status: 'error',
-        message: 'Validation Error',
-        errors: [{ field: 'field1', message: 'is required' }]
+        success: false,
+        error: 'Validation Error',
+        details: [{ field: 'field1', message: 'is required' }]
       }));
     });
 
@@ -59,8 +59,8 @@ describe('Middleware Tests', () => {
 
       expect(res.status).toHaveBeenCalledWith(500);
       expect(res.json).toHaveBeenCalledWith(expect.objectContaining({
-        status: 'error',
-        message: 'Something broke'
+        success: false,
+        error: 'Something broke'
       }));
     });
   });

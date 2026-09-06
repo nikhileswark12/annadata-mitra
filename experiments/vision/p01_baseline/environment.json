@@ -1,0 +1,5 @@
+{
+  "python": "3.10.8 (tags/v3.10.8:aaaf517, Oct 11 2022, 16:50:30) [MSC v.1933 64 bit (AMD64)]",
+  "tensorflow": "2.20.0",
+  "keras": "3.12.1"
+}

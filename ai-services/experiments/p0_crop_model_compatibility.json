@@ -1,0 +1,7 @@
+{
+    "model_path": "F:\\Annadata Mitra\\annadata-mitra\\ai-services\\models\\crop_model.pkl",
+    "load_successful": true,
+    "error": null,
+    "traceback": null,
+    "estimator_class": "<class 'sklearn.ensemble._forest.RandomForestClassifier'>"
+}

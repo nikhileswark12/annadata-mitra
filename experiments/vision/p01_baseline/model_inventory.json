@@ -1,0 +1,22 @@
+[
+  {
+    "file": "ai-services/models/vision_model.h5",
+    "size": 10723080,
+    "mtime": 1784740815.6288102
+  },
+  {
+    "file": "ai-services/models/vision/vision_model.keras",
+    "size": 4903620,
+    "mtime": 1786269983.8143656
+  },
+  {
+    "file": "ai-services/models/vision/checkpoints/best_model.keras",
+    "size": 4903620,
+    "mtime": 1786263582.127448
+  },
+  {
+    "file": "ai-services/models/vision/improved/vision_model_improved.keras",
+    "size": 10230413,
+    "mtime": 1786281227.4369988
+  }
+]

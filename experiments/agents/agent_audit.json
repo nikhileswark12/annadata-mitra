@@ -1,0 +1,129 @@
+{
+    "Weather": {
+        "Status": "Success",
+        "Output": {
+            "location": "Pune",
+            "crop": "crops",
+            "temperature": 31.2,
+            "humidity": 99,
+            "rainfall": 151.4,
+            "windSpeed": 18.5,
+            "condition": "Moderate Rain",
+            "risks": [
+                {
+                    "type": "Flood Risk",
+                    "severity": "High",
+                    "message": "Heavy rainfall of 151.4mm threatens waterlogging.",
+                    "recommendation": "1. Open all drainage channels immediately.\n2. Do not apply fertiliser for 48h after rain.\n3. Check field bunds for overflow points."
+                },
+                {
+                    "type": "Fungal Disease Risk",
+                    "severity": "High",
+                    "message": "Very high humidity (99%) creates ideal conditions for blight and mildew.",
+                    "recommendation": "1. Apply Mancozeb 75WP at 2g/litre.\n2. Spray early morning before 8 AM.\n3. Repeat every 7 days while humidity stays high.\n4. Avoid overhead irrigation."
+                }
+            ],
+            "source": "synthetic-seasonal",
+            "note": "Add OPENWEATHER_API_KEY to .env for live weather data.",
+            "cached": false
+        }
+    },
+    "Market": {
+        "Status": "Success",
+        "Output": {
+            "currentPrice": 2250.0,
+            "predictedPrice": 2329,
+            "advice": "Wait",
+            "trendWatch": "Upward",
+            "demandInsight": "Demand for Wheat is stable based on recent mandi arrivals.",
+            "markets": [
+                {
+                    "name": "Chittorgarh",
+                    "price": 2250.0,
+                    "trend": "Up",
+                    "distance": "15 km"
+                },
+                {
+                    "name": "Kabirdham",
+                    "price": 2200.0,
+                    "trend": "Up",
+                    "distance": "15 km"
+                },
+                {
+                    "name": "Koria",
+                    "price": 2130.0,
+                    "trend": "Up",
+                    "distance": "15 km"
+                },
+                {
+                    "name": "Amreli",
+                    "price": 2555.0,
+                    "trend": "Up",
+                    "distance": "15 km"
+                },
+                {
+                    "name": "Amreli",
+                    "price": 2480.0,
+                    "trend": "Up",
+                    "distance": "15 km"
+                }
+            ],
+            "totalValue": null,
+            "source": "csv-data"
+        }
+    },
+    "Strategist": {
+        "Status": "Tested",
+        "Scenarios": [
+            {
+                "Scenario": "1_Missing_Inputs",
+                "Output": {
+                    "crop": "",
+                    "location": "",
+                    "season": "Current Season",
+                    "confidence": 85,
+                    "cropAdvice": "Crop suitability could not be fully assessed because required soil inputs were unavailable.",
+                    "marketTiming": "Market intelligence unavailable.",
+                    "weatherRisk": "Weather data unavailable.",
+                    "farmAdvisory": "Consult local experts for region-specific pest and disease management.",
+                    "actions": [
+                        "Proceed with standard farming practices."
+                    ],
+                    "explanation": {
+                        "what": "Synthesized integrated strategy using 3 AI agent(s).",
+                        "why": "Based on 3 active agent(s). Limited input for: crop, weather, market.",
+                        "factors": [
+                            "Crop Agent lacked sufficient inputs to confirm suitability."
+                        ]
+                    }
+                }
+            },
+            {
+                "Scenario": "2_Valid_Inputs",
+                "Output": {
+                    "crop": "rice",
+                    "location": "Pune",
+                    "season": "Current Season",
+                    "confidence": 80,
+                    "cropAdvice": "Crop suitability data unavailable.",
+                    "marketTiming": "Prioritize immediate harvest or crop protection over market timing due to severe weather threat.",
+                    "weatherRisk": " ",
+                    "farmAdvisory": "Consult local experts for region-specific pest and disease management.",
+                    "actions": [
+                        "Mitigate weather risk: ",
+                        "Prioritize immediate harvest or crop protection despite market timing."
+                    ],
+                    "explanation": {
+                        "what": "Synthesized integrated strategy using 2 AI agent(s).",
+                        "why": "Based on 2 active agent(s). Missing/Failed: crop.",
+                        "factors": [
+                            "Weather risk identified: Unknown.",
+                            "Market intelligence suggests holding produce.",
+                            "Conflict detected: High weather risk vs Market wait recommendation."
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

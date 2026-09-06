@@ -1,0 +1,6 @@
+{
+  "ai-services/models/vision_model.h5": "3bf0e6f96b9bd7c56b1bb923ae3c4e55",
+  "ai-services/models/vision/vision_model.keras": "7c6a09903aea82fddb4956f8f888bce0",
+  "ai-services/models/vision/checkpoints/best_model.keras": "c452a2c765e9675bb6c8ff373988b522",
+  "ai-services/models/vision/improved/vision_model_improved.keras": "ca264d1e0df6793bd3c3a3feaeefe2d4"
+}

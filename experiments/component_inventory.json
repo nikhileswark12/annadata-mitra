@@ -1,0 +1,102 @@
+[
+    {
+        "Component": "Frontend React App",
+        "Location": "frontend/",
+        "Type": "UI",
+        "Input": "User interactions",
+        "Output": "API Requests/UI",
+        "Model/Logic": "React Components",
+        "Status": "Found",
+        "Executable?": "Yes"
+    },
+    {
+        "Component": "Backend Node.js API",
+        "Location": "backend/",
+        "Type": "API Gateway",
+        "Input": "HTTP Requests",
+        "Output": "JSON/Database",
+        "Model/Logic": "Express Controllers",
+        "Status": "Found",
+        "Executable?": "Yes"
+    },
+    {
+        "Component": "AI Services Flask App",
+        "Location": "ai-services/app.py",
+        "Type": "AI Microservice",
+        "Input": "HTTP Requests",
+        "Output": "Predictions/JSON",
+        "Model/Logic": "Flask Routes",
+        "Status": "Found",
+        "Executable?": "Yes"
+    },
+    {
+        "Component": "Crop Planner Agent",
+        "Location": "ai-services/agents/crop_agent.py",
+        "Type": "Agent/ML",
+        "Input": "NPK, Weather",
+        "Output": "Crop Recs",
+        "Model/Logic": "RandomForest",
+        "Status": "Found",
+        "Executable?": "Yes"
+    },
+    {
+        "Component": "Vision Agent",
+        "Location": "ai-services/agents/vision_agent.py",
+        "Type": "Agent/CNN",
+        "Input": "Image",
+        "Output": "Disease",
+        "Model/Logic": "MobileNetV2",
+        "Status": "Found",
+        "Executable?": "Yes"
+    },
+    {
+        "Component": "Weather Agent",
+        "Location": "ai-services/agents/weather_agent.py",
+        "Type": "Agent/Rules",
+        "Input": "Lat/Lon",
+        "Output": "Climate Risks",
+        "Model/Logic": "OpenWeather API + Heuristics",
+        "Status": "Found",
+        "Executable?": "Yes"
+    },
+    {
+        "Component": "Market Agent",
+        "Location": "ai-services/agents/market_agent.py",
+        "Type": "Agent/Rules",
+        "Input": "Crop",
+        "Output": "Price/Trends",
+        "Model/Logic": "Heuristics",
+        "Status": "Found",
+        "Executable?": "Yes"
+    },
+    {
+        "Component": "Strategist Agent",
+        "Location": "ai-services/agents/strategist_agent.py",
+        "Type": "Agent/Orchestrator",
+        "Input": "All Agent Outputs",
+        "Output": "Synthesized Recs",
+        "Model/Logic": "Deterministic Rules",
+        "Status": "Found",
+        "Executable?": "Yes"
+    },
+    {
+        "Component": "Crop Model",
+        "Location": "ai-services/models/crop_recommendation/crop_model.pkl",
+        "Type": "Model Weight",
+        "Input": "Features",
+        "Output": "Class",
+        "Model/Logic": "RandomForest",
+        "Status": "Found",
+        "Executable?": "N/A"
+    },
+    {
+        "Component": "Vision Model",
+        "Location": "ai-services/models/vision/vision_model.keras",
+        "Type": "Model Weight",
+        "Input": "Image Tensor",
+        "Output": "Class Prob",
+        "Model/Logic": "CNN",
+        "Status": "Found",
+        "Executable?": "N/A"
+    }
+]

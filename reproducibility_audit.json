@@ -1,8 +1,0 @@
-{
-  "experiments_folder_intact": true,
-  "e1_orchestration_dataset": "unmodified",
-  "e2_explainability_results": "unmodified",
-  "frozen_vision_test_set": "unmodified",
-  "frozen_crop_test_set": "unmodified",
-  "status": "PASS"
-}
