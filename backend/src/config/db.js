@@ -11,11 +11,13 @@ const connectDB = async () => {
       socketTimeoutMS: 4000,
     });
     isConnected = true;
-    logger.info('✅ MongoDB connected');
+    logger.info('MongoDB connected');
+    return true;
   } catch (err) {
     isConnected = false;
     logger.error(`❌ MongoDB failed: ${err.message}`);
-    logger.warn('⚠️  Running without DB — data will not persist');
+    logger.warn('Running without DB — data will not persist');
+    return false;
   }
 };
 
