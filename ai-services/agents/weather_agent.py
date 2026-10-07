@@ -64,9 +64,34 @@ class WeatherAgent(BaseAgent):
 
     def _get_weather(self, location: str) -> dict:
         """
-        Generate deterministic realistic weather from location + season.
-        Same location always returns same weather for the current month.
+        Fetch live weather data from OpenWeatherMap if OPENWEATHER_API_KEY is present in env.
+        Otherwise, fall back to generating deterministic realistic weather from location + season.
         """
+        import os
+        import json
+        import urllib.request
+        from urllib.parse import quote
+        
+        api_key = os.environ.get('OPENWEATHER_API_KEY')
+        
+        if api_key and api_key != 'your_actual_api_key_here':
+            try:
+                url = f"https://api.openweathermap.org/data/2.5/weather?q={quote(location)}&appid={api_key}&units=metric"
+                req = urllib.request.Request(url)
+                with urllib.request.urlopen(req, timeout=5) as response:
+                    data = json.loads(response.read().decode())
+                
+                return {
+                    'temperature': round(data['main']['temp'], 1),
+                    'humidity': round(data['main']['humidity']),
+                    'rainfall': round(data.get('rain', {}).get('1h', 0.0), 1),
+                    'windSpeed': round(data['wind']['speed'] * 3.6, 1), # Convert m/s to km/h
+                    'condition': data['weather'][0]['main'].title() if data.get('weather') else 'Clear',
+                }
+            except Exception as e:
+                logger.error(f"OpenWeatherMap API error: {e}. Falling back to synthetic data.")
+
+        # Fallback: Generate deterministic realistic weather from location + season
         month = datetime.now().month - 1  # 0-indexed
         baselines = knowledge_loader.load('weather', 'seasonal_baselines')
         base_temp, base_hum, base_rain, base_wind = baselines.get(str(month), (25, 60, 50, 10))

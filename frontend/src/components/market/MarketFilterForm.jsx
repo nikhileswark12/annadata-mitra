@@ -28,6 +28,7 @@ function MarketFilterForm({ formData, onChange, onSubmit, onReset, loading }) {
               type="number"
               value={formData.quantity}
               onChange={onChange}
+              inputProps={{ min: 0 }}
             />
           </Grid>
 

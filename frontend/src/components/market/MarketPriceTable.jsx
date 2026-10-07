@@ -10,7 +10,7 @@ import {
   TableContainer,
 } from "@mui/material";
 
-function MarketPriceTable({ prices }) {
+function MarketPriceTable({ prices, cropName }) {
   if (!prices || prices.length === 0) return null;
 
   return (
@@ -26,15 +26,15 @@ function MarketPriceTable({ prices }) {
               <TableRow>
                 <TableCell><strong>Market</strong></TableCell>
                 <TableCell><strong>Crop</strong></TableCell>
-                <TableCell><strong>Price</strong></TableCell>
+                <TableCell><strong>Price (₹/q)</strong></TableCell>
                 <TableCell><strong>Distance</strong></TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {prices.map((item, index) => (
                 <TableRow key={index}>
-                  <TableCell>{item.market}</TableCell>
-                  <TableCell>{item.crop}</TableCell>
+                  <TableCell>{item.name}</TableCell>
+                  <TableCell>{cropName || "Unknown"}</TableCell>
                   <TableCell>₹{item.price}</TableCell>
                   <TableCell>{item.distance}</TableCell>
                 </TableRow>

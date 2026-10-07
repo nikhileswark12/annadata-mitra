@@ -6,33 +6,45 @@ import {
   Typography,
   TextField,
   Button,
-  Chip,
-  Box,
   Alert,
-  AlertTitle
+  AlertTitle,
+  Box
 } from "@mui/material";
-import CloudIcon from '@mui/icons-material/Cloud';
-import WarningAmberIcon from '@mui/icons-material/WarningAmber';
-import DateRangeIcon from '@mui/icons-material/DateRange';
-import LightbulbIcon from '@mui/icons-material/Lightbulb';
+
 import Layout from "../components/common/Layout";
 import PageHeader from "../components/common/PageHeader";
 import { getRiskAssessment } from "../services/weatherService";
+import AIResultCard from "../components/common/AIResultCard";
+import EmptyState from "../components/common/EmptyState";
+import { ResultLoadingState } from "../components/common/Loader";
+import ErrorState from "../components/common/ErrorState";
+import MetricCard from "../components/common/MetricCard";
+import SectionHeader from "../components/common/SectionHeader";
+import StatusChip from "../components/common/StatusChip";
 
 function WeatherRisk() {
   const [location, setLocation] = useState("");
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [formError, setFormError] = useState("");
 
-  const handleFetch = async () => {
-    if (!location) return;
+  const handleFetch = async (e) => {
+    if (e) e.preventDefault();
+    const trimmedLocation = location.trim();
+    
+    if (!trimmedLocation) {
+      setFormError("Location is required");
+      return;
+    }
+
+    setFormError("");
     setLoading(true);
     setError("");
     setWeather(null);
 
     try {
-      const response = await getRiskAssessment({ location });
+      const response = await getRiskAssessment({ location: trimmedLocation });
       if (response.data?.success === true) {
         setWeather(response.data.data);
       } else {
@@ -40,136 +52,163 @@ function WeatherRisk() {
       }
     } catch (err) {
       console.error(err);
-      setError(err.message || "An error occurred while fetching weather data.");
+      setError(err.response?.data?.message || err.message || "An error occurred while fetching weather data.");
     } finally {
       setLoading(false);
     }
   };
 
   const getSeverityColor = (severity) => {
-    switch (severity) {
-      case "High": return "error";
-      case "Medium": return "warning";
-      case "Low": return "info";
+    switch (severity?.toLowerCase()) {
+      case "high": return "error";
+      case "medium": return "warning";
+      case "low": return "info";
       default: return "info";
     }
+  };
+
+  const handleChange = (e) => {
+    setLocation(e.target.value);
+    if (formError) setFormError("");
   };
 
   return (
     <Layout>
       <PageHeader
-        title="Weather Risk"
+        title="Climate & Risk"
         subtitle="Analyze weather conditions and identify potential agricultural risks."
       />
 
-      <Grid container spacing={3}>
-        {/* LEFT SIDE */}
-        <Grid size={{ xs: 12, md: 6 }}>
-          <Stack spacing={3}>
-            {/* INPUT */}
-            <Paper elevation={3} sx={{ p: 4, borderRadius: 4 }}>
-              <Stack spacing={2}>
-                <Typography variant="h6" fontWeight={800}>
-                  Location Input
-                </Typography>
+      <Grid container spacing={4}>
+        {/* LEFT SIDE - LOCATION INPUT */}
+        <Grid item xs={12} md={5}>
+          <Paper elevation={0} sx={{ p: 4, borderRadius: 3, border: "1px solid #e0e0e0" }}>
+            <form onSubmit={handleFetch}>
+              <Stack spacing={3}>
+                <SectionHeader title="Location Input" />
 
                 <TextField
                   label="Enter Location"
+                  placeholder="e.g. Pune, Maharashtra"
                   value={location}
-                  onChange={(e) => setLocation(e.target.value)}
+                  onChange={handleChange}
+                  error={!!formError}
+                  helperText={formError || "Enter a city, region, or state"}
                   fullWidth
+                  disabled={loading}
                 />
 
-                {error && <Alert severity="error">{error}</Alert>}
                 <Button
+                  type="submit"
                   variant="contained"
-                  onClick={handleFetch}
                   disabled={loading}
                   sx={{
-                    borderRadius: 3,
+                    borderRadius: 2,
                     fontWeight: 700,
-                    backgroundColor: "#2e7d32",
+                    textTransform: "none",
+                    py: 1.5,
                   }}
                 >
-                  {loading ? "Checking..." : "Check Weather Risk"}
+                  {loading ? "Assessing..." : "Assess Weather Risk"}
                 </Button>
               </Stack>
-            </Paper>
-
-            {/* CURRENT WEATHER */}
-            {weather && (
-              <Paper elevation={3} sx={{ p: 4, borderRadius: 4 }}>
-                <Typography variant="h6" fontWeight={800} mb={2}>
-                  <Box display="flex" alignItems="center" gap={1}>
-                    <CloudIcon fontSize="small" />
-                    Current Weather
-                  </Box>
-                </Typography>
-
-                <Stack spacing={1}>
-                  <Typography>Temperature: {weather.temperature}°C</Typography>
-                  <Typography>Humidity: {weather.humidity}%</Typography>
-                  <Typography>Rainfall: {weather.rainfall} mm</Typography>
-                  <Typography>Condition: {weather.condition}</Typography>
-                </Stack>
-              </Paper>
-            )}
-          </Stack>
+            </form>
+          </Paper>
         </Grid>
 
-        {/* RIGHT SIDE */}
-        <Grid size={{ xs: 12, md: 6 }}>
-          <Stack spacing={3}>
-            {/* RISKS */}
-            {weather && (
-              <Paper elevation={3} sx={{ p: 4, borderRadius: 4 }}>
-                <Typography variant="h6" fontWeight={800} mb={2}>
-                  <Box display="flex" alignItems="center" gap={1}>
-                    <WarningAmberIcon fontSize="small" />
-                    Risk Alerts
-                  </Box>
-                </Typography>
+        {/* RIGHT SIDE - RESULTS OR STATES */}
+        <Grid item xs={12} md={7}>
+          {loading && <ResultLoadingState height={400} />}
 
-                <Stack spacing={2}>
-                  {weather.risks && weather.risks.map((risk, index) => (
-                    <Alert key={index} severity={getSeverityColor(risk.severity)}>
-                      <AlertTitle>{risk.type}</AlertTitle>
-                      <Typography variant="body2" gutterBottom>
-                        {risk.message}
+          {!loading && error && (
+            <ErrorState
+              title="Assessment Failed"
+              message={error}
+              onRetry={handleFetch}
+            />
+          )}
+
+          {!loading && !error && !weather && (
+            <EmptyState
+              title="No Weather Data"
+              description="Enter your location to assess current weather conditions and agricultural risks."
+            />
+          )}
+
+          {!loading && !error && weather && (
+            <Stack spacing={4}>
+              
+              {/* CURRENT WEATHER METRICS */}
+              <Box>
+                <SectionHeader title="Current Conditions" />
+                <Grid container spacing={2}>
+                  <Grid item xs={6} sm={4}>
+                    <MetricCard 
+                      title="Temperature" 
+                      value={`${weather.temperature}°C`} 
+                    />
+                  </Grid>
+                  <Grid item xs={6} sm={4}>
+                    <MetricCard 
+                      title="Humidity" 
+                      value={`${weather.humidity}%`} 
+                    />
+                  </Grid>
+                  <Grid item xs={6} sm={4}>
+                    <MetricCard 
+                      title="Rainfall" 
+                      value={`${weather.rainfall} mm`} 
+                    />
+                  </Grid>
+                  <Grid item xs={6} sm={4}>
+                    <MetricCard 
+                      title="Wind Speed" 
+                      value={`${weather.windSpeed || 0} km/h`} 
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={8}>
+                    <MetricCard 
+                      title="Condition" 
+                      value={weather.condition} 
+                    />
+                  </Grid>
+                </Grid>
+              </Box>
+
+              {/* RISK ALERTS & ADVISORY */}
+              <AIResultCard
+                title="Agricultural Risks & Advisory"
+                primaryResult={weather.risks && weather.risks.length > 0 ? `${weather.risks.length} Alert(s)` : "Normal"}
+                severity={weather.risks && weather.risks.length > 0 ? weather.risks[0].severity : "Low"}
+              >
+                <Stack spacing={2} mt={2}>
+                  {weather.risks && weather.risks.length > 0 ? (
+                    weather.risks.map((risk, index) => (
+                      <Alert key={index} severity={getSeverityColor(risk.severity)}>
+                        <AlertTitle sx={{ fontWeight: 700 }}>{risk.type}</AlertTitle>
+                        <Typography variant="body2" gutterBottom>
+                          {risk.message}
+                        </Typography>
+                        {risk.recommendation && (
+                          <Typography variant="caption" display="block" sx={{ mt: 1, p: 1, bgcolor: 'rgba(255,255,255,0.5)', borderRadius: 1 }}>
+                            <strong>Recommendation:</strong> {risk.recommendation}
+                          </Typography>
+                        )}
+                      </Alert>
+                    ))
+                  ) : (
+                    <Box display="flex" alignItems="center" gap={2} p={2} sx={{ bgcolor: 'success.50', borderRadius: 2 }}>
+                      <StatusChip status="Optimal" />
+                      <Typography variant="body2" color="success.800">
+                        No major agricultural risks identified for current weather conditions.
                       </Typography>
-                      <Typography variant="caption">
-                        <strong>Recommendation:</strong> {risk.recommendation}
-                      </Typography>
-                    </Alert>
-                  ))}
-                  {(!weather.risks || weather.risks.length === 0) && (
-                    <Typography color="text.secondary">No major risks identified.</Typography>
+                    </Box>
                   )}
                 </Stack>
-              </Paper>
-            )}
+              </AIResultCard>
 
-
-
-            {/* ADVISORY */}
-            {weather && (
-              <Paper elevation={3} sx={{ p: 4, borderRadius: 4 }}>
-                <Typography variant="h6" fontWeight={800} mb={2}>
-                  <Box display="flex" alignItems="center" gap={1}>
-                    <LightbulbIcon fontSize="small" />
-                    Advisory
-                  </Box>
-                </Typography>
-
-                <Typography variant="body2" color="text.secondary">
-                  Based on current conditions, ensure proper irrigation
-                  management and monitor pest activity. High humidity and
-                  rainfall may increase disease risk. Adjust farming practices
-                  accordingly.
-                </Typography>
-              </Paper>
-            )}
-          </Stack>
+            </Stack>
+          )}
         </Grid>
       </Grid>
     </Layout>

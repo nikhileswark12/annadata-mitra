@@ -1,17 +1,24 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import {
   Box,
   Paper,
   Stack,
   Typography,
-  Chip,
   Button,
-  CircularProgress,
-  Alert
+  Alert,
+  AlertTitle
 } from "@mui/material";
+
+
+
 import Layout from "../components/common/Layout";
 import PageHeader from "../components/common/PageHeader";
+import EmptyState from "../components/common/EmptyState";
+import { PageLoadingState } from "../components/common/Loader";
+import ErrorState from "../components/common/ErrorState";
+import StatusChip from "../components/common/StatusChip";
 import api from "../services/api";
 
 function Dashboard() {
@@ -37,187 +44,178 @@ function Dashboard() {
     fetchStats();
   }, []);
 
-  if (loading) {
-    return (
-      <Layout>
-        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh' }}>
-          <CircularProgress color="success" />
-        </Box>
-      </Layout>
-    );
-  }
-
   if (error) {
     return (
       <Layout>
-        <Box sx={{ mt: 4 }}>
-          <Alert severity="error">{error}</Alert>
-        </Box>
+        <PageHeader 
+          title="Your Agricultural Decision Center" 
+          subtitle="Monitor crop conditions, assess risks, explore markets, and get AI-guided recommendations." 
+        />
+        <ErrorState message={error} onRetry={() => window.location.reload()} />
       </Layout>
     );
   }
 
-  const summaryCards = data ? [
-    {
-      title: "Crop Suggestions",
-      value: data.cropSuggestions,
-      subtitle: "AI-based recommendations generated",
-    },
-    {
-      title: "Weather Alerts",
-      value: data.weatherAlerts,
-      subtitle: "Potential agricultural risks today",
-    },
-    {
-      title: "Disease Scans",
-      value: data.diseaseScans,
-      subtitle: "Recent crop image analyses completed",
-    },
-    {
-      title: "Best Market Price",
-      value: `₹${data.bestMarketPrice?.price || 0}`,
-      subtitle: `Top ${data.bestMarketPrice?.crop || ''} price from ${data.bestMarketPrice?.location || ''}`,
-    },
-  ] : [];
+  const renderContent = () => {
+    if (loading) {
+      return <PageLoadingState />;
+    }
 
-  const recommendations = data ? [
-    {
-      title: "Best Crop Window",
-      description: data.todaysRecommendations?.cropWindow,
-    },
-    {
-      title: "Market Insight",
-      description: data.todaysRecommendations?.marketInsight,
-    },
-    {
-      title: "Farm Advisory",
-      description: data.todaysRecommendations?.farmAdvisory,
-    },
-  ] : [];
+    const agents = [
+      {
+        title: "Crop Planning",
+        purpose: "Help determine suitable crops based on available soil/environment information.",
+        status: data?.cropSuggestions > 0 ? `${data.cropSuggestions} plans created` : "No plans yet",
+        action: "Plan a Crop",
+        route: "/crop-planning"
+      },
+      {
+        title: "Climate & Risk",
+        purpose: "Understand weather conditions and agricultural risks.",
+        status: data?.weatherAlerts > 0 ? `${data.weatherAlerts} risk checks done` : "No recent checks",
+        action: "Assess Weather Risk",
+        route: "/weather-risk"
+      },
+      {
+        title: "Vision Agronomist",
+        purpose: "Analyze crop/plant images for potential disease or health issues.",
+        status: data?.diseaseScans > 0 ? `${data.diseaseScans} scans completed` : "No scans yet",
+        action: "Analyze Crop Image",
+        route: "/disease-detection"
+      },
+      {
+        title: "Market Intelligence",
+        purpose: "Understand market prices and selling opportunities.",
+        status: data?.bestMarketPrice?.price ? `Best price: ₹${data.bestMarketPrice.price} (${data.bestMarketPrice.crop})` : "No market searches",
+        action: "Check Market Prices",
+        route: "/market-intelligence"
+      },
+      {
+        title: "Strategist",
+        purpose: "Combine agricultural intelligence into actionable guidance.",
+        status: "Ready for consultation",
+        action: "Get Strategic Guidance",
+        route: "/strategist"
+      }
+    ];
 
-  const recentActivities = data?.recentActivities || [];
-  return (
-    <Layout>
-      <PageHeader
-        title="Dashboard"
-        subtitle="Welcome to Annadata Mitra. Monitor crop planning, market trends, weather risk, and disease detection from one place."
-      />
+    const recentActivities = data?.recentActivities || [];
 
+    return (
       <Grid container spacing={3}>
-        {summaryCards.map((card) => (
-          <Grid key={card.title} size={{ xs: 12, sm: 6, md: 3 }}>
-            <Paper
-              elevation={3}
-              sx={{
-                p: 3,
-                borderRadius: 4,
-                height: "100%",
-              }}
-            >
-              <Stack spacing={1}>
-                <Typography variant="subtitle1" fontWeight={700} color="#1b5e20">
-                  {card.title}
-                </Typography>
-                <Typography variant="h4" fontWeight={800}>
-                  {card.value}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {card.subtitle}
-                </Typography>
-              </Stack>
-            </Paper>
-          </Grid>
-        ))}
-
-        <Grid size={{ xs: 12, md: 8 }}>
-          <Paper elevation={3} sx={{ p: 4, borderRadius: 4, height: "100%" }}>
-            <Stack spacing={3}>
-              <Box>
-                <Typography variant="h5" fontWeight={800} gutterBottom>
-                  Today’s Recommendations
-                </Typography>
-                <Typography color="text.secondary">
-                  Smart suggestions generated from your farming support modules.
-                </Typography>
-              </Box>
-
-              <Grid container spacing={2}>
-                {recommendations.map((item) => (
-                  <Grid key={item.title} size={{ xs: 12, md: 4 }}>
-                    <Paper
-                      variant="outlined"
-                      sx={{
-                        p: 3,
-                        borderRadius: 3,
-                        height: "100%",
-                        borderColor: "#c8e6c9",
-                        backgroundColor: "#f8fff8",
-                      }}
-                    >
-                      <Typography variant="h6" fontWeight={700} color="#2e7d32" mb={1}>
-                        {item.title}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {item.description}
-                      </Typography>
-                    </Paper>
-                  </Grid>
-                ))}
-              </Grid>
-
-              <Box>
-                <Button
-                  variant="contained"
-                  sx={{
-                    borderRadius: 3,
-                    textTransform: "none",
-                    fontWeight: 700,
-                    px: 3,
-                    backgroundColor: "#2e7d32",
-                  }}
-                >
-                  Explore Insights
-                </Button>
-              </Box>
-            </Stack>
-          </Paper>
+        {/* Priority Area */}
+        <Grid size={{ xs: 12 }}>
+          <Alert severity="info">
+            <AlertTitle>System Status</AlertTitle>
+            No urgent agricultural alerts at this time. Run a climate check to assess weather risks or consult the Vision Agronomist if you notice crop issues.
+          </Alert>
         </Grid>
 
-        <Grid size={{ xs: 12, md: 4 }}>
-          <Paper elevation={3} sx={{ p: 4, borderRadius: 4, height: "100%" }}>
-            <Stack spacing={2}>
-              <Typography variant="h5" fontWeight={800}>
-                Recent Activity
-              </Typography>
-
-              {recentActivities.map((activity, index) => (
+        {/* Five-Agent Overview */}
+        <Grid size={{ xs: 12 }}>
+          <Typography variant="h5" fontWeight={800} gutterBottom sx={{ mt: 2 }}>
+            Agricultural Agents
+          </Typography>
+          <Grid container spacing={2}>
+            {agents.map((agent) => (
+              <Grid size={{ xs: 12, sm: 6, md: 4 }} key={agent.title}>
                 <Paper
-                  key={index}
-                  variant="outlined"
+                  elevation={2}
                   sx={{
-                    p: 2,
+                    p: 3,
                     borderRadius: 3,
-                    borderColor: "#dcedc8",
-                    backgroundColor: "#fcfff9",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
                   }}
                 >
-                  <Typography variant="body2">{activity.text} {activity.time ? `(${new Date(activity.time).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})})` : ''}</Typography>
+                  <Box mb={2}>
+                    <Typography variant="h6" fontWeight={700}>
+                      {agent.title}
+                    </Typography>
+                  </Box>
+                  <Typography variant="body2" color="text.secondary" mb={2} sx={{ flexGrow: 1 }}>
+                    {agent.purpose}
+                  </Typography>
+                  <Box mb={2}>
+                    <StatusChip status="inactive" label={agent.status} size="small" />
+                  </Box>
+                  <Button
+                    component={Link}
+                    to={agent.route}
+                    variant="outlined"
+                    fullWidth
+                    sx={{ textTransform: "none", fontWeight: 700 }}
+                  >
+                    {agent.action}
+                  </Button>
                 </Paper>
-              ))}
+              </Grid>
+            ))}
+          </Grid>
+        </Grid>
 
-              <Chip
-                label="System Status: Active"
-                sx={{
-                  width: "fit-content",
-                  fontWeight: 700,
-                  backgroundColor: "#e8f5e9",
-                  color: "#2e7d32",
-                }}
+        {/* Strategist Preview */}
+        <Grid size={{ xs: 12, md: 8 }}>
+          <Typography variant="h5" fontWeight={800} gutterBottom sx={{ mt: 2 }}>
+            Your Next Steps
+          </Typography>
+          <EmptyState
+            title="No recent strategic guidance"
+            description="Consult the Strategist for personalized advice and actionable guidance."
+            action={
+              <Button component={Link} to="/strategist" variant="contained" color="primary">
+                Get Strategic Guidance
+              </Button>
+            }
+          />
+        </Grid>
+
+        {/* Recent Activity */}
+        <Grid size={{ xs: 12, md: 4 }}>
+          <Typography variant="h5" fontWeight={800} gutterBottom sx={{ mt: 2 }}>
+            Recent Activity
+          </Typography>
+          <Paper elevation={2} sx={{ p: 3, borderRadius: 3, height: "100%", minHeight: 250 }}>
+            {recentActivities.length > 0 ? (
+              <Stack spacing={2}>
+                {recentActivities.map((activity, index) => (
+                  <Paper
+                    key={index}
+                    variant="outlined"
+                    sx={{
+                      p: 2,
+                      borderRadius: 2,
+                      borderColor: "divider",
+                      backgroundColor: "background.default",
+                    }}
+                  >
+                    <Typography variant="body2">
+                      {activity.text}{" "}
+                      {activity.time && `(${new Date(activity.time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })})`}
+                    </Typography>
+                  </Paper>
+                ))}
+              </Stack>
+            ) : (
+              <EmptyState 
+                title="No activity yet"
+                description="Your recent actions will appear here."
               />
-            </Stack>
+            )}
           </Paper>
         </Grid>
       </Grid>
+    );
+  };
+
+  return (
+    <Layout>
+      <PageHeader
+        title="Your Agricultural Decision Center"
+        subtitle="Monitor crop conditions, assess risks, explore markets, and get AI-guided recommendations."
+      />
+      {renderContent()}
     </Layout>
   );
 }

@@ -1,9 +1,17 @@
+import { Container, Box, Typography } from "@mui/material";
+
 function Layout({ title, children }) {
   return (
-    <div style={{ padding: "30px", maxWidth: "1200px", margin: "0 auto" }}>
-      {title && <h1 style={{ marginBottom: "10px", color: "#1b5e20" }}>{title}</h1>}
-      <div>{children}</div>
-    </div>
+    <Container maxWidth="lg" sx={{ py: 4, minHeight: "100vh" }}>
+      {title && (
+        <Box sx={{ mb: 3 }}>
+          <Typography variant="h4" color="primary" gutterBottom>
+            {title}
+          </Typography>
+        </Box>
+      )}
+      <Box>{children}</Box>
+    </Container>
   );
 }
 

@@ -24,7 +24,7 @@ const PriceTrendChart = ({ trends }) => {
     datasets: [
       {
         label: "Market Price (₹)",
-        data: trends.map((t) => t.price),
+        data: trends.map((t) => t.value),
       },
     ],
   };

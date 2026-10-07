@@ -1,33 +1,37 @@
 import { Card, CardContent, Typography, Chip, Stack } from "@mui/material";
 
-function MarketRecommendationCard({ recommendation }) {
+function MarketRecommendationCard({ recommendation, cropName }) {
   if (!recommendation) return null;
 
   return (
     <Card elevation={3} sx={{ borderRadius: 3, height: "100%" }}>
       <CardContent sx={{ p: 3 }}>
         <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
-          Best Market Recommendation
+          Market Insights
         </Typography>
 
         <Stack spacing={1.5}>
-          <Typography>Predicted Price: ₹{recommendation.predictedPrice}</Typography>
           <Typography>
-            <strong>Market:</strong> {recommendation.market}
+            <strong>Crop:</strong> {cropName || "Unknown"}
           </Typography>
           <Typography>
-            <strong>Crop:</strong> {recommendation.crop}
+            <strong>Current Price:</strong> ₹{recommendation.currentPrice}/quintal
           </Typography>
           <Typography>
-            <strong>Expected Price:</strong> ₹{recommendation.expectedPrice}/quintal
+            <strong>Predicted Price:</strong> ₹{recommendation.predictedPrice}/quintal
           </Typography>
+          {recommendation.totalValue > 0 && (
+            <Typography>
+              <strong>Total Value:</strong> ₹{recommendation.totalValue}
+            </Typography>
+          )}
           <Typography>
-            <strong>Reason:</strong> {recommendation.reason}
+            <strong>Advice:</strong> {recommendation.advice}
           </Typography>
 
           <Chip
-            label={recommendation.trend}
-            color={recommendation.trend === "Rising" ? "success" : "warning"}
+            label={`Trend: ${recommendation.trendWatch}`}
+            color={recommendation.trendWatch === "Upward" || recommendation.trendWatch === "Up" ? "success" : recommendation.trendWatch === "Stable" ? "default" : "warning"}
             sx={{ width: "fit-content", fontWeight: 600 }}
           />
         </Stack>

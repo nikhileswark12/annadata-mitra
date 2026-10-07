@@ -46,7 +46,7 @@ function Navbar() {
         </Typography>
 
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, alignItems: "center" }}>
-          {navLinks.map((item) => (
+          {user && navLinks.map((item) => (
             <Button
               key={item.path}
               component={Link}

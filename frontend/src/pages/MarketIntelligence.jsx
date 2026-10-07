@@ -1,15 +1,13 @@
 import { useState } from "react";
 import Grid from "@mui/material/Grid";
 import {
-  Alert,
   Box,
   Chip,
   Paper,
   Stack,
   Typography,
 } from "@mui/material";
-import LocalOfferIcon from '@mui/icons-material/LocalOffer';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+
 import Layout from "../components/common/Layout";
 import PageHeader from "../components/common/PageHeader";
 import MarketFilterForm from "../components/market/MarketFilterForm";
@@ -17,7 +15,10 @@ import MarketRecommendationCard from "../components/market/MarketRecommendationC
 import MarketPriceTable from "../components/market/MarketPriceTable";
 import PriceTrendChart from "../components/market/PriceTrendChart";
 import { getMarketInsights } from "../services/marketService";
-import { marketMockData } from "../utils/mockData";
+import ErrorState from "../components/common/ErrorState";
+import { ResultLoadingState } from "../components/common/Loader";
+import MetricCard from "../components/common/MetricCard";
+import EmptyState from "../components/common/EmptyState";
 
 const initialFormData = {
   crop: "",
@@ -25,34 +26,14 @@ const initialFormData = {
   location: "",
 };
 
-// Static fallback if not loaded
-const initialHighlights = [
-  {
-    title: "Demand Insight",
-    value: "--",
-    note: "Enter market details to see demand insight.",
-  },
-  {
-    title: "Trend Watch",
-    value: "--",
-    note: "Enter market details to see trend watch.",
-  },
-  {
-    title: "Farmer Tip",
-    value: "Compare Cost",
-    note: "Always compare transport cost with final selling advantage.",
-  },
-];
-
 function MarketIntelligence() {
   const [formData, setFormData] = useState(initialFormData);
   const [recommendation, setRecommendation] = useState(null);
   const [prices, setPrices] = useState([]);
   const [trends, setTrends] = useState([]);
-  const [highlights, setHighlights] = useState(initialHighlights);
-  const [message, setMessage] = useState("");
+  const [highlights, setHighlights] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -62,18 +43,9 @@ function MarketIntelligence() {
     }));
   };
 
-  const normalizeMarketData = (data) => {
-    if (data?.recommendation && data?.prices && data?.trends) return data;
-    if (data?.data?.recommendation && data?.data?.prices && data?.data?.trends) {
-      return data.data;
-    }
-    return marketMockData;
-  };
-
   const handleSubmit = async () => {
     setLoading(true);
-    setMessage("");
-    setError("");
+    setError(null);
 
     try {
       const response = await getMarketInsights(formData);
@@ -89,7 +61,9 @@ function MarketIntelligence() {
         currentPrice: d.currentPrice,
         predictedPrice: d.predictedPrice,
         advice: d.advice,
-        totalValue: d.totalValue
+        totalValue: d.totalValue,
+        trendWatch: d.trendWatch,
+        demandInsight: d.demandInsight
       });
       
       setPrices(d.markets || []);
@@ -123,11 +97,12 @@ function MarketIntelligence() {
           note: "Always compare transport cost with final selling advantage.",
         }
       ]);
-
-      setMessage("Market insights loaded successfully.");
     } catch (err) {
       console.error("Market insights error:", err);
-      setError(err.message || "Failed to load market insights.");
+      setError({
+        message: "Failed to load market insights",
+        details: err.response?.data?.message || err.message || "Please check your connection and try again."
+      });
     } finally {
       setLoading(false);
     }
@@ -138,9 +113,8 @@ function MarketIntelligence() {
     setRecommendation(null);
     setPrices([]);
     setTrends([]);
-    setHighlights(initialHighlights);
-    setMessage("");
-    setError("");
+    setHighlights([]);
+    setError(null);
   };
 
   return (
@@ -153,22 +127,12 @@ function MarketIntelligence() {
       <Grid container spacing={3}>
         {highlights.map((item) => (
           <Grid key={item.title} size={{ xs: 12, sm: 6, md: 4 }}>
-            <Paper elevation={3} sx={{ p: 3, borderRadius: 4, height: "100%" }}>
-              <Stack spacing={1}>
-                <Box display="flex" alignItems="center" gap={1}>
-                  <LocalOfferIcon fontSize="small" sx={{ color: '#1b5e20' }} />
-                  <Typography variant="subtitle1" fontWeight={700} color="#1b5e20">
-                    {item.title}
-                  </Typography>
-                </Box>
-                <Typography variant="h5" fontWeight={800}>
-                  {item.value}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {item.note}
-                </Typography>
-              </Stack>
-            </Paper>
+            <MetricCard 
+              title={item.title}
+              value={item.value}
+              subtitle={item.note}
+              color="primary"
+            />
           </Grid>
         ))}
 
@@ -184,24 +148,35 @@ function MarketIntelligence() {
 
         {error && (
           <Grid size={12}>
-            <Alert severity="error" sx={{ borderRadius: 3 }}>
-              {error}
-            </Alert>
+            <Box sx={{ pt: 2 }}>
+              <ErrorState title={error.message} message={error.details} onRetry={handleSubmit} />
+            </Box>
           </Grid>
         )}
 
-        {message && !error && (
+        {loading && (
           <Grid size={12}>
-            <Alert severity="success" sx={{ borderRadius: 3 }}>
-              {message}
-            </Alert>
+            <Box sx={{ pt: 2 }}>
+              <ResultLoadingState height={300} message="Analyzing market trends..." />
+            </Box>
           </Grid>
         )}
 
-        {recommendation && (
+        {!loading && !error && !recommendation && prices.length === 0 && (
+          <Grid size={12}>
+             <Box sx={{ pt: 2 }}>
+                <EmptyState 
+                  title="No Analysis Result" 
+                  description="Enter your crop, quantity, and location to view available market information."
+                />
+             </Box>
+          </Grid>
+        )}
+
+        {!loading && !error && recommendation && (
           <Grid size={{ xs: 12, md: 4 }}>
-            <Stack spacing={3}>
-              <MarketRecommendationCard recommendation={recommendation} />
+            <Stack spacing={3} sx={{ height: "100%", pt: 2 }}>
+              <MarketRecommendationCard recommendation={recommendation} cropName={formData.crop} />
 
               <Paper elevation={3} sx={{ p: 3, borderRadius: 4 }}>
                 <Stack spacing={2}>
@@ -232,72 +207,79 @@ function MarketIntelligence() {
           </Grid>
         )}
 
-        {prices.length > 0 && (
+        {!loading && !error && prices.length > 0 && (
           <Grid size={{ xs: 12, md: recommendation ? 8 : 12 }}>
-            <Paper elevation={3} sx={{ p: 3, borderRadius: 4 }}>
-              <Stack spacing={2}>
-                <Box>
+            <Box sx={{ pt: 2 }}>
+              <Paper elevation={3} sx={{ p: 3, borderRadius: 4 }}>
+                <Stack spacing={2}>
+                  <Box>
+                    <Typography variant="h6" fontWeight={800}>
+                      Market Price Comparison
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      Compare available mandi prices and identify the most profitable selling option.
+                    </Typography>
+                  </Box>
+
+                  <MarketPriceTable prices={prices} cropName={formData.crop} />
+                </Stack>
+              </Paper>
+            </Box>
+          </Grid>
+        )}
+
+        {!loading && !error && trends.length > 0 && (
+          <Grid size={{ xs: 12, md: 8 }}>
+            <Box sx={{ pt: 2 }}>
+              <Paper elevation={3} sx={{ p: 3, borderRadius: 4 }}>
+                <Stack spacing={2}>
                   <Typography variant="h6" fontWeight={800}>
-                    Market Price Comparison
+                    Price Trend Analysis
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    Compare available mandi prices and identify the most profitable selling option.
+                    Historical price movement helps estimate whether current market timing is favorable.
                   </Typography>
-                </Box>
-
-                <MarketPriceTable prices={prices} />
-              </Stack>
-            </Paper>
+                  <PriceTrendChart trends={trends} />
+                </Stack>
+              </Paper>
+            </Box>
           </Grid>
         )}
 
-        {trends.length > 0 && (
-          <Grid size={{ xs: 12, md: 8 }}>
-            <Paper elevation={3} sx={{ p: 3, borderRadius: 4 }}>
-              <Stack spacing={2}>
-                <Typography variant="h6" fontWeight={800}>
-                  Price Trend Analysis
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Historical price movement helps estimate whether current market timing is favorable.
-                </Typography>
-                <PriceTrendChart trends={trends} />
-              </Stack>
-            </Paper>
+        {!loading && !error && recommendation && (
+          <Grid size={{ xs: 12, md: 4 }}>
+            <Box sx={{ pt: 2, height: "100%" }}>
+              <Paper elevation={3} sx={{ p: 3, borderRadius: 4, height: "100%" }}>
+                <Stack spacing={2}>
+                      <Typography variant="h6" fontWeight={800}>
+                        Smart Market Tips
+                      </Typography>
+
+                      {[
+                        "Check modal price, not just max price, for realistic selling expectations.",
+                        "A nearby mandi with slightly lower price may still be more profitable after transport savings.",
+                        "Track trends over multiple days before finalizing large-volume sales.",
+                      ].map((tip, index) => (
+                        <Paper
+                          key={index}
+                          variant="outlined"
+                          sx={{
+                            p: 2,
+                            borderRadius: 3,
+                            borderColor: "divider",
+                            backgroundColor: "background.paper",
+                          }}
+                        >
+                          <Box>
+                            <Typography variant="body2">{tip}</Typography>
+                          </Box>
+                        </Paper>
+                      ))}
+                </Stack>
+              </Paper>
+            </Box>
           </Grid>
         )}
-
-        <Grid size={{ xs: 12, md: 4 }}>
-          <Paper elevation={3} sx={{ p: 3, borderRadius: 4, height: "100%" }}>
-            <Stack spacing={2}>
-                  <Typography variant="h6" fontWeight={800}>
-                    Smart Market Tips
-                  </Typography>
-
-                  {[
-                    "Check modal price, not just max price, for realistic selling expectations.",
-                    "A nearby mandi with slightly lower price may still be more profitable after transport savings.",
-                    "Track trends over multiple days before finalizing large-volume sales.",
-                  ].map((tip, index) => (
-                    <Paper
-                      key={index}
-                      variant="outlined"
-                      sx={{
-                        p: 2,
-                        borderRadius: 3,
-                        borderColor: "#dcedc8",
-                        backgroundColor: "#fcfff9",
-                      }}
-                    >
-                      <Box display="flex" alignItems="flex-start" gap={1}>
-                        <TrendingUpIcon fontSize="small" sx={{ mt: 0.5 }} />
-                        <Typography variant="body2">{tip}</Typography>
-                      </Box>
-                    </Paper>
-                  ))}
-            </Stack>
-          </Paper>
-        </Grid>
       </Grid>
     </Layout>
   );
