@@ -38,12 +38,10 @@ class StrategistPredictor(PredictionInterface):
                 crop_predictor = registry.get("crop")
                 upstream["crop"] = crop_predictor.predict(input_data)
                 source_status["crop"] = "available"
-            elif crop or location:
-                # Call crop agent but flag as insufficient inputs (it uses defaults)
-                crop_predictor = registry.get("crop")
-                upstream["crop"] = crop_predictor.predict(input_data)
-                source_status["crop"] = "insufficient_input"
             else:
+                # Crop suitability requires the same complete soil/environment
+                # inputs as the standalone Crop Planning agent. Do not call the
+                # predictor with implicit defaults and present that as evidence.
                 source_status["crop"] = "insufficient_input"
         except Exception as e:
             logging.error(f"Strategist Crop orchestration error: {e}")
