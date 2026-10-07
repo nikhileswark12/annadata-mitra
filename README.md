@@ -3,9 +3,9 @@
   <p><b>AI-Powered Agricultural Decision Support System for Indian Farmers</b></p>
 </div>
 
-Annadata Mitra is a farmer-centric, intelligent agricultural platform designed to support the complete farming lifecycle—from pre-sowing crop planning through crop health monitoring, climate-risk assessment, and market decisions. 
+Annadata Mitra is a farmer-centric agricultural decision-support platform designed to support the farming lifecycle—from pre-sowing crop planning through crop-health assessment, climate-risk analysis, market intelligence, and strategic synthesis.
 
-By synthesizing precision machine learning models (Crop Recommendation, Disease Pathology) with localized heuristic agents (Market, Weather) through a deterministic orchestration layer (the Strategist), the system guarantees conflict-free, highly accurate advisories tailored for the Indian agricultural landscape.
+The current implementation combines machine-learning inference, deterministic reasoning agents, and a Strategist orchestration layer. Outputs are designed to be explainable and source-aware; the system does not claim live or predictive data when the configured data source is unavailable.
 
 ---
 
@@ -26,14 +26,14 @@ Unlike monolithic LLM wrappers, Annadata Mitra is designed as a **multi-agent ag
 
 * **AI-based crop recommendation**
 * **Soil and climate-aware crop planning**
-* **Real-time weather monitoring**
+* **Weather-risk analysis with live OpenWeatherMap support when configured, plus an explicitly labelled synthetic seasonal fallback**
 * **Agricultural climate-risk assessment**
 * **Extreme-weather alerts**
 * **Plant disease and crop-health analysis**
 * **Image-based crop disease detection**
 * **MobileNetV2-based vision architecture**
 * **Mandi price intelligence**
-* **Agricultural commodity price forecasting** (Rule-based heuristics)
+* **Short-term market guidance from the available mandi dataset and rule-based reasoning**
 * **Multi-mandi comparison**
 * **Farmer-specific decision support**
 * **Multi-agent decision synthesis**
@@ -76,10 +76,10 @@ Annadata Mitra utilizes a specialized five-agent architecture.
 * Deployed as a Python/scikit-learn inference pipeline within a Flask microservice via `joblib` serialization.
 
 ### Agent 2 — Climate & Risk Agent
-* Integrates with the **OpenWeatherMap** API for current weather and forecast data.
-* Applies crop-specific risk rules to assess frost, drought, heavy rainfall, heatwave, and pest risks.
-* Calculates severity levels and generates preventive recommendations.
-* Implements intelligent weather caching and scheduled refresh mechanisms.
+* Uses **OpenWeatherMap** when `OPENWEATHER_API_KEY` is configured.
+* Falls back to deterministic synthetic seasonal weather when a live key is unavailable or the live request fails; the response explicitly identifies this source.
+* Applies agricultural risk rules and generates preventive recommendations.
+* Uses a short-lived in-memory cache.
 
 ### Agent 3 — Vision Agronomist Agent
 * Dedicated to visual pathology diagnosis.
@@ -107,19 +107,20 @@ Treatment Recommendation
 ```
 
 ### Agent 4 — Market Intelligence Agent
-* Provides agricultural mandi price data utilizing **Agmarknet** datasets.
-* Implements multi-mandi comparisons and trend analysis.
-* Generates selling recommendations.
-* *(Note: Currently relies on functional rule-based heuristics. Fully predictive ML temporal forecasting is planned for v2.0).*
+* Uses the repository's mandi-price dataset for available crops.
+* Implements multi-mandi comparison and rule-based market reasoning.
+* Generates selling recommendations when source data is available.
+* Does **not** silently substitute synthetic market prices when the requested crop or dataset is unavailable.
+* The frontend's short-term projection is an interpolation between current and predicted values; it is not a day-by-day historical series.
 
 ### Agent 5 — Strategist Agent
-The core decision-synthesis layer. It invokes all active leaf agents in parallel and applies a strict priority hierarchy:
+The core decision-synthesis layer. It invokes the available leaf agents through a deterministic orchestration flow and applies a strict priority hierarchy:
 
 ```text
 Safety > Health > Timing > Economics
 ```
 
-* Executes parallel invocation of active agents.
+* Orchestrates the Crop, Weather, and Market agents and records whether each source is available, insufficient, or failed.
 * Performs **Conflict detection** and **Conflict resolution** (e.g., stopping pesticide application during heavy rainfall).
 * Generates timeline-based action grouping.
 * Provides unified, farmer-friendly guidance in multilingual outputs.
@@ -197,7 +198,7 @@ annadata-mitra/
 
 ## API Modules
 
-**Documented & Implemented Endpoints:**
+**Current implemented endpoints:**
 
 ```text
 # Authentication
@@ -207,26 +208,29 @@ GET  /api/auth/profile
 
 # Crop Planning
 POST /api/crop/recommend
-GET  /api/crop/history/:userId
+GET  /api/crop/history
 
 # Climate & Risk
-GET  /api/weather/current
-GET  /api/weather/forecast
-GET  /api/risk/assess
+POST /api/weather/risk
+GET  /api/weather/history
 
 # Vision Agronomist
 POST /api/vision/analyze
-GET  /api/vision/history/:userId
+GET  /api/vision/history
 
 # Market Intelligence
-GET  /api/market/prices/:crop
-POST /api/market/recommend
-GET  /api/market/trends/:crop
+POST /api/market/insights
+GET  /api/market/history
 
 # Decision Synthesis
-POST /api/strategist/guidance
+POST /api/strategist/generate
+GET  /api/strategist/history
+
+# Dashboard
+GET  /api/dashboard/stats
 ```
-*(All endpoints require JWT authorization via the Node.js API Gateway).*
+
+All agent and dashboard endpoints require JWT authorization through the Node.js API Gateway.
 
 ## Data & Datasets
 
@@ -276,18 +280,19 @@ Copy the `.env.example` in `backend/` and `ai-services/` to a local `.env` and p
 
 ```env
 # Example configuration
-MONGODB_URI=mongodb://localhost:27017/annadata-mitra
+MONGO_URI=mongodb://localhost:27017/annadata_mitra
 JWT_SECRET=your_secure_jwt_secret_here
 PORT=5000
-PYTHON_SERVICE_URL=http://localhost:5001
+PYTHON_SERVICE_URL=http://localhost:7000
 OPENWEATHER_API_KEY=your_openweathermap_api_key
+USE_MOCK_MODELS=false
 ```
 
 ## Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/placeholder/annadata-mitra.git
+git clone https://github.com/nikhileswark12/annadata-mitra.git
 cd annadata-mitra
 
 # 1. Backend Setup
@@ -313,7 +318,7 @@ For local development, initiate the stack in the following order:
 # 1. Ensure MongoDB is running locally or via cloud
 mongod
 
-# 2. Start AI Services (Port 5001)
+# 2. Start AI Services (Port 7000)
 cd ai-services
 python app.py
 
@@ -328,18 +333,24 @@ npm run dev
 
 ## Testing
 
-Annadata Mitra includes distinct testing paradigms for its varied architectures:
+The repository defines build/lint/test commands for the individual application layers. A complete live end-to-end run still requires the local MongoDB, Node backend, AI service, model/data artifacts, and frontend to be started together.
 
 ```bash
-# Node.js API Gateway Testing
+# Frontend
+cd frontend
+npm run build
+npm run lint
+
+# Backend
 cd backend
 npm test
-npm run test:e2e
 
-# Python AI Services Testing
+# AI service
 cd ai-services
 pytest
 ```
+
+These commands should be treated as layer-level verification unless a complete environment is available. No claim of successful live E2E execution is made solely from the repository source.
 
 ## Development Methodology
 
@@ -354,7 +365,7 @@ The project was executed through a rigorous phased development and scientific va
 
 ## Current Project Status
 
-The Annadata Mitra system has successfully concluded its empirical validation phases (E1-E7) and achieved a 100/100 publication readiness score.
+The repository contains the five-agent application architecture and the integrated frontend/backend/AI-service flow. Validation results should be interpreted according to the current implementation and the configured data/model sources; synthetic weather fallback and unavailable market data are explicitly surfaced rather than treated as live data.
 
 ```text
 Crop Planning       ██████████ (Verified - 99.09% Acc)
@@ -362,8 +373,8 @@ Climate & Risk      ██████████ (Verified - Rules Engine)
 Vision              ██████████ (Verified - 88.71% Top-1)
 Market Intelligence ███████░░░ (Partially Implemented - Heuristics)
 Strategist          ██████████ (Verified - 100% Conflict Safety)
-Integration         ██████████ (Verified)
-Testing             ██████████ (Verified)
+Integration         █████████░ (Contract verified; live E2E environment required)
+Testing             ███████░░░ (Layer-level commands defined; live E2E evidence environment-dependent)
 ```
 
 ## Limitations
