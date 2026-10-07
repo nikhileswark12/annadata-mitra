@@ -103,11 +103,11 @@ function Dashboard() {
 
     return (
       <Grid container spacing={3}>
-        {/* Priority Area */}
+        {/* System Status */}
         <Grid size={{ xs: 12 }}>
           <Alert severity="info">
             <AlertTitle>System Status</AlertTitle>
-            No urgent agricultural alerts at this time. Run a climate check to assess weather risks or consult the Vision Agronomist if you notice crop issues.
+            No live agricultural alert is displayed on the dashboard yet. Run a climate check for current weather-risk analysis, or consult the Vision Agronomist if you notice crop issues.
           </Alert>
         </Grid>
 

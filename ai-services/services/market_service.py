@@ -36,11 +36,15 @@ class RealMarketPredictor(PredictionInterface):
             advice_rules = knowledge_loader.load('market', 'advice_rules') or {}
             return MarketReasoner.reason(processed_data, knowledge, advice_rules)
         
-        # Fallback to synthetic if crop not found or CSV missing
-        from mock.predictors import MockMarketPredictor
-        mock_predictor = MockMarketPredictor()
-        mock_knowledge = mock_predictor.load_knowledge(processed_data)
-        return mock_predictor.reason(processed_data, mock_knowledge)
+        # Never silently substitute synthetic market data when real market data
+        # is unavailable. The caller must be able to distinguish unavailable data
+        # from a real market recommendation.
+        if self.df is None:
+            raise RuntimeError("Market data source unavailable: mandi_prices.csv was not found.")
+        raise ValueError(
+            f"No market data available for crop '{processed_data}'. "
+            "No synthetic market recommendation was generated."
+        )
 
     def calculate_confidence(self, reasoning):
         # mock predictor returns a flat dict, MarketReasoner returns standard struct

@@ -234,10 +234,10 @@ function MarketIntelligence() {
               <Paper elevation={3} sx={{ p: 3, borderRadius: 4 }}>
                 <Stack spacing={2}>
                   <Typography variant="h6" fontWeight={800}>
-                    Price Trend Analysis
+                    Short-Term Price Projection
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    Historical price movement helps estimate whether current market timing is favorable.
+                    The short-term line is interpolated between the current and predicted prices returned by the Market Intelligence service; it is not a day-by-day historical series.
                   </Typography>
                   <PriceTrendChart trends={trends} />
                 </Stack>
