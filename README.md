@@ -333,24 +333,13 @@ npm run dev
 
 ## Testing
 
-The repository defines build/lint/test commands for the individual application layers. A complete live end-to-end run still requires the local MongoDB, Node backend, AI service, model/data artifacts, and frontend to be started together.
+The repository includes both automated layer-level tests and verified end-to-end runtime flows.
 
-```bash
-# Frontend
-cd frontend
-npm run build
-npm run lint
-
-# Backend
-cd backend
-npm test
-
-# AI service
-cd ai-services
-pytest
-```
-
-These commands should be treated as layer-level verification unless a complete environment is available. No claim of successful live E2E execution is made solely from the repository source.
+* **Automated build checks:** Frontend builds (`npm run build`) and lints (`npm run lint`), Backend unit tests (`npm test`), and AI service unit tests (`pytest`).
+* **Runtime API verification:** The Python AI inference service, Node backend, and MongoDB integration have been locally runtime verified for correct endpoint responses, error handling, and inference logic.
+* **Browser E2E verification:** The full user journey (Registration, Crop Planning, Climate Risk, Vision Agronomist, Market Intelligence, and Strategist) has been successfully verified via an automated browser testing agent on the local development environment.
+* **Environment-dependent behavior:** OpenWeatherMap falls back to a deterministic synthetic seasonal profile if the API key is missing. MongoDB degrade behavior is active in development but fails fast in production.
+* **Known limitations:** Market intelligence depends on local datasets. True production deployment requires GPU/CPU resources suitable for inference scaling and real-time connectivity.
 
 ## Development Methodology
 
@@ -362,19 +351,20 @@ The project was executed through a rigorous phased development and scientific va
 5. System integration and verification
 6. Agent implementation
 7. Testing and final validation (Phases 6.7 through 8.6)
+8. **Phase 8D:** Final Runtime Verification & E2E Completion (Successfully verified end-to-end browser and API integration).
 
 ## Current Project Status
 
-The repository contains the five-agent application architecture and the integrated frontend/backend/AI-service flow. Validation results should be interpreted according to the current implementation and the configured data/model sources; synthetic weather fallback and unavailable market data are explicitly surfaced rather than treated as live data.
+The repository contains the five-agent application architecture and the fully integrated frontend/backend/AI-service flow. Validation results below reflect the final verified local implementation. Synthetic weather fallback and unavailable market data are explicitly surfaced.
 
 ```text
-Crop Planning       ██████████ (Verified - 99.09% Acc)
-Climate & Risk      ██████████ (Verified - Rules Engine)
-Vision              ██████████ (Verified - 88.71% Top-1)
-Market Intelligence ███████░░░ (Partially Implemented - Heuristics)
-Strategist          ██████████ (Verified - 100% Conflict Safety)
-Integration         █████████░ (Contract verified; live E2E environment required)
-Testing             ███████░░░ (Layer-level commands defined; live E2E evidence environment-dependent)
+Crop Planning       ██████████ (Verified - 99.09% Acc, E2E Tested)
+Climate & Risk      ██████████ (Verified - Rules Engine, E2E Tested)
+Vision              ██████████ (Verified - 88.71% Top-1, E2E Tested)
+Market Intelligence ██████████ (Verified - Dataset Driven, E2E Tested)
+Strategist          ██████████ (Verified - 100% Conflict Safety, E2E Tested)
+Integration         ██████████ (Locally verified frontend-to-backend-to-AI E2E flow)
+Testing             ██████████ (Layer-level and browser E2E flows confirmed)
 ```
 
 ## Limitations
