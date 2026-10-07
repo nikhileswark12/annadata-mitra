@@ -19,7 +19,12 @@ process.on('unhandledRejection', (reason) => {
 });
 
 const start = async () => {
-  await connectDB();
+  const dbConnected = await connectDB();
+  if (!dbConnected && process.env.NODE_ENV === 'production') {
+    logger.error('Fatal: MongoDB is required in production. Server startup aborted.');
+    process.exit(1);
+  }
+
   app.listen(PORT, () => {
     logger.info(`🚀 Server on http://localhost:${PORT}`);
     logger.info(`🤖 AI service: ${process.env.PYTHON_SERVICE_URL}`);
