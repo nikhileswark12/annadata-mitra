@@ -18,5 +18,6 @@ class Config:
     
     MANDI_CSV_PATH = os.path.join(os.path.dirname(__file__), '../datasets/mandi/mandi_prices.csv')
 
-    # Flags for mock mode (since datasets are unavailable)
-    USE_MOCK_MODELS = False
+    # Explicitly opt into synthetic/mock predictors for local development only.
+    # Production deployments must keep this disabled.
+    USE_MOCK_MODELS = os.environ.get("USE_MOCK_MODELS", "false").strip().lower() == "true"
