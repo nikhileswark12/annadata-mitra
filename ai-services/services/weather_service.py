@@ -44,19 +44,27 @@ class RealWeatherPredictor(PredictionInterface):
     def format_response(self, reasoning, confidence, explanation):
         context = reasoning.get("context", {})
         weather = context.get("weather", {})
-        
+        source = weather.get("source", "synthetic-fallback")
+
+        if source == "openweathermap":
+            note = "Live weather data fetched from OpenWeatherMap."
+        elif source == "synthetic-fallback":
+            note = "OpenWeatherMap was unavailable; deterministic seasonal fallback data was used."
+        else:
+            note = "Deterministic seasonal weather data is being used because OPENWEATHER_API_KEY is not configured."
+
         return {
-            'location':    context.get('location', ''),
-            'crop':        context.get('crop', 'crops'),
+            'location': context.get('location', ''),
+            'crop': context.get('crop', 'crops'),
             'temperature': weather.get('temperature', 0),
-            'humidity':    weather.get('humidity', 0),
-            'rainfall':    weather.get('rainfall', 0),
-            'windSpeed':   weather.get('windSpeed', 0),
-            'condition':   weather.get('condition', ''),
-            'risks':       reasoning.get("decision", []),
-            'source':      'synthetic-seasonal',
-            'note':        'Add OPENWEATHER_API_KEY to .env for live weather data.',
-            'cached':      False,
+            'humidity': weather.get('humidity', 0),
+            'rainfall': weather.get('rainfall', 0),
+            'windSpeed': weather.get('windSpeed', 0),
+            'condition': weather.get('condition', ''),
+            'risks': reasoning.get("decision", []),
+            'source': source,
+            'note': note,
+            'cached': False,
         }
 
 try:
@@ -70,7 +78,7 @@ def weather_risk():
     data = request.json
     if not data:
         return format_error("No JSON provided", 422)
-    
+
     if 'location' not in data or len(str(data['location']).strip()) < 2:
         return format_error("Missing field: location", 422)
 
